@@ -81,41 +81,95 @@ and depends on activity; one region only; no independent validation (burned area
 yet. Part of the data (FIRMS acquisition and an exploratory comparison of sensors) was prepared the day before the
 event; see [`docs/PROVENIENCIA.md`](docs/PROVENIENCIA.md). "Experimental" and "Not validated" are shown in the interface.
 
-## Run it and reproduce
-Prerequisites: Python >= 3.10 (standard library only) and Node >= 22.
+## Install, test and reproduce
+Everything below is **implemented and used to produce the published Tocantins results**. Prerequisites: Python >= 3.10
+(standard library only, nothing to install) and Node >= 22 / npm.
 
+### 1. Install and run the application
 ```bash
-# scientific engine tests (147 tests; 28 are skipped when the NASA data are absent)
-python -m unittest discover -s tests -t .
-
-# scientific engine and web exporter (need the NASA FIRMS data you download yourself; see docs)
-python -I tools/export_web/exportar_web.py --bruto <raw.db> --resultados <results_m05.db> --saidas <outputs_m05> --saida web/public/data/real
-python -I tools/export_web/validar_export.py --bruto <raw.db> --saidas <outputs_m05> --export web/public/data/real
-
-# web application
-cd web
+git clone https://github.com/OtalicioAmerico/firewatch-nasa-space-apps-2026.git
+cd firewatch-nasa-space-apps-2026/web
 npm ci --ignore-scripts
 npm run dev                     # http://127.0.0.1:5173
 npm run lint && npx tsc -b && npm test && npm run build
 ```
+Without the derived data in `web/public/data/real` (see step 5) the application shows "data not available" instead of any
+substitute data.
 
-Without `web/public/data/real` the application shows "data not available" instead of any substitute data (8 data-dependent
-web tests are then not defined: 39 run and pass; 47 with the derived data). To download FIRMS data you need your own
-`FIRMS_MAP_KEY` (environment variable only; it is never written to files); see `tools/aquisicao/`.
+### 2. Run the tests
+```bash
+python -m unittest discover -s tests -t .      # from the repository root
+cd web && npm test
+```
+| Suite | Runs without NASA data | Needs the real data (not in this repository) |
+|---|---|---|
+| Python (147 tests) | 119 pass (engine, matching, coverage rules, calendar maths, importers, hygiene) | 28 are **skipped**: 18 need `NASA_DATA_DIR` (a folder with the downloaded FIRMS files and IBGE shapefiles: `test_poc_real`, `test_regressao_missao01`) and 10 need `FIRECAL_BANCO_DIR` + `FIRECAL_GRANULOS` (the research SQLite databases and the CMR granule JSON: `test_m05_real`) |
+| Web (`npm test`) | 39 pass (interface logic, i18n, simulated source) | 8 more run only when `web/public/data/real/meta.json` exists (`real.test.ts`, the exported derived data): 47 in total |
 
-## Tests
-- Python: 147 tests (28 skipped without data), standard library `unittest`.
-- Web: 39 tests without data (47 with the derived data) using the Node test runner; `oxlint` and `tsc -b` run clean.
+A green run therefore proves the software on fictitious/simulated inputs; the real-data tests are what check the
+published numbers, and they can only run after you reproduce the data (steps 3-5).
+
+### 3. Get your own NASA FIRMS key and acquire data
+FIRMS downloads need a free **MAP_KEY** that you request from NASA FIRMS (https://firms.modaps.eosdis.nasa.gov/api/map_key/). Put it in an environment variable only: it is never read from files and never printed or logged.
+```bash
+export FIRMS_MAP_KEY=<your key>                     # PowerShell: $env:FIRMS_MAP_KEY = '<your key>'
+python -I tools/aquisicao/sondagem_firms.py --plan       # no network, no key: shows the plan
+python -I tools/aquisicao/sondagem_firms.py --check-key  # key status and quota (numbers only)
+python -I tools/aquisicao/historico_firms.py --plan
+python -I tools/aquisicao/historico_firms.py --run --out <folder outside Git> [--workers 3]
+```
+`historico_firms.py` downloads MODIS (`MODIS_SP`) and VIIRS NOAA-20 (`VIIRS_NOAA20_SP`) standard products for Tocantins,
+2021-01-01 to 2025-12-31, in windows of up to 5 days, with a persistent manifest (SHA-256 of every response),
+resumable runs and a conservative local rate limit. The region and the period are fixed in the script (see
+[`docs/EXTENDING_TO_NEW_REGIONS.md`](docs/EXTENDING_TO_NEW_REGIONS.md)). Downloaded files must stay **outside** the repository.
+
+### 4. Process the data and reproduce the Tocantins results
+Download the IBGE *Malha Municipal Digital 2025* shapefile `BR_Municipios_2025` yourself and place it as
+`<IBGE dir>/IBGE_2025/municipios/BR_Municipios_2025.{shp,dbf}`. Then, in this order (each script's header documents its
+arguments; paths are your own folders, outside Git):
+```bash
+# a) NASA CMR granule footprints and global granule counts (read-only public catalogue, no key)
+python -I tools/pesquisa/cmr_granulos_periodo.py --ini 2021-01-01 --fim 2025-12-31 --bbox -51.0,-13.75,-45.5,-4.9 --saida granulos.json
+python -I tools/pesquisa/cmr_contagem_global.py --ini 2021-01-01 --fim 2025-12-31 --saida contagem_global.json
+# b) import the validated FIRMS files into a local SQLite database
+python tools/historico/importar.py --dados <acquisition dir> --banco bruto.db --ibge <IBGE dir>
+# c) coverage per cell and satellite-day (writes into a separate results database)
+python tools/historico/cobertura_celulas.py --bruto bruto.db --resultados resultados.db --granulos granulos.json --ibge <IBGE dir> --contagem contagem_global.json
+# d) calendar indicators, scenarios A/B, spatial agreement K and historical reference
+python tools/historico/calendario.py --bruto bruto.db --resultados resultados.db --granulos granulos.json --saida saidas
+python tools/historico/analise_m05.py --saidas saidas --resultados resultados.db --bruto bruto.db
+```
+Note: the order above follows the scripts' documented inputs and outputs. The complete chain was run by the team during
+the event; it was **not re-run end to end from this public repository**, so expect small path or argument adjustments.
+Set `FIRECAL_BANCO_DIR` and `FIRECAL_GRANULOS` (and `NASA_DATA_DIR`) to enable the data-dependent tests.
+
+### 5. Export the JSON for the front end
+```bash
+python -I tools/export_web/exportar_web.py --bruto bruto.db --resultados resultados.db --saidas saidas --saida web/public/data/real
+python -I tools/export_web/validar_export.py --bruto bruto.db --saidas saidas --export web/public/data/real
+cd web && npm run build
+```
+The exporter does not recompute the method: it reuses the engine, checks day by day that the cell-level sets reproduce
+the daily totals, and writes `MANIFEST.json` with the SHA-256 of every file. `web/public/data/real` is ignored by Git.
+The simplified boundaries in `web/src/geo/` come from `tools/mock_geo/gerar_geometria_tocantins.py`.
+
+### 6. Other states or countries
+**Not automatic.** The method (`firecal/`) is region-independent in design, but the acquisition scripts, the processing
+tools, the boundary files, the satellite list and the web interface are currently wired to Tocantins. What would need to
+change, and what has never been tested, is listed in
+[`docs/EXTENDING_TO_NEW_REGIONS.md`](docs/EXTENDING_TO_NEW_REGIONS.md). Contributions: [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## Licence and attributions
-- **Code:** MIT, Copyright (c) 2026 Otalicio Americo de Melo Junior (Ikarus Aurora). See [`LICENSE`](LICENSE).
-- **Ikarus Aurora** is the project owner's authorial development identity, **not a registered company**. Its logos and
-  visual identity are **reserved** and not covered by MIT: [`BRAND_AND_RIGHTS.md`](BRAND_AND_RIGHTS.md).
+- **Code:** MIT, Copyright (c) 2026 Otalicio Americo de Melo Junior (Ikarus Aurora). See [`LICENSE`](LICENSE). The generic
+  Aurora design tokens (`web/src/design/aurora/`) are also MIT.
+- **Ikarus Aurora** is the project owner's authorial development identity, **not a registered company**. Its **logos and
+  brand are reserved** and are not covered by MIT, but they are isolated in two places so that any fork can replace them
+  and build, run and reproduce everything: [`BRAND_AND_RIGHTS.md`](BRAND_AND_RIGHTS.md).
 - **Third-party software:** [`web/public/THIRD_PARTY_NOTICES.txt`](web/public/THIRD_PARTY_NOTICES.txt) (React, MapLibre GL,
-  lucide-react, Inter font under OFL-1.1, and others).
+  lucide-react, Inter font under OFL-1.1, and others), each under its own licence.
 - **NASA data:** *We acknowledge the use of data and/or imagery from NASA's Fire Information for Resource Management
   System (FIRMS) (https://earthdata.nasa.gov/firms), part of NASA's Earth Science Data and Information System (ESDIS).*
-  NASA Earthdata CMR metadata. NASA does not endorse this project.
+  NASA Earthdata CMR metadata. NASA does not endorse this project; NASA data keep their own terms.
 - **IBGE data:** Source: IBGE, *Malha Municipal Digital 2025*, provided under a licence compatible with Creative Commons
   BY 4.0. The geometry here is simplified and processed; it is not the official mesh.
 - More: [`docs/LICENCAS_E_ATRIBUICOES.md`](docs/LICENCAS_E_ATRIBUICOES.md) (Portuguese).
@@ -125,9 +179,26 @@ web tests are then not defined: 39 run and pass; 47 with the derived data). To d
 - **David** - critical review of the evidence.
 - **Tony** - public-utility perspective and fit to the challenge.
 
-## Use of AI
-Anthropic's **Claude Code** (model Claude Sonnet 5.5) was used, under the team's direction, to write and review code
-(scientific engine, tests, web application), analysis scripts, documentation and the deployment procedure. This code and
-these texts are therefore AI-assisted or AI-generated, and are acknowledged as such here, in `package.json`, and in
-[`AI_DISCLOSURE.md`](AI_DISCLOSURE.md). No scientific conclusion was validated by AI. The team's human contributions
-and the exact scope of AI help are described in `AI_DISCLOSURE.md`.
+(Only the roles above are recorded; no other claim is made about individual contributions.)
+
+## Originality and prior work (full disclosure)
+- **Before the event (2026-11-13):** the NASA FIRMS data acquisition and an exploratory research study comparing MODIS
+  and VIIRS were prepared in an earlier private project of the same owner. They are used as input and reference only; the
+  conclusions were treated as hypotheses and re-verified (see `docs/PROVENIENCIA.md`, `docs/VALIDACAO_DADOS.md`).
+- **During the event (2026-11-14 to 2026-11-15):** this repository's scientific engine, tools, tests, calendar results,
+  web application and documentation were developed.
+- **Pre-existing, reused components of the owner:** the Aurora design tokens and one Ikarus Aurora logo mark.
+- Whether work prepared on 2026-11-13 is compatible with the event rule that teams may not start working on the challenge
+  before the hackathon is an open question that the team will clarify with its Local Lead.
+
+## Use of AI (Super Intelligence)
+Two AI tools were used, under human direction. Full details: [`AI_DISCLOSURE.md`](AI_DISCLOSURE.md).
+- **Claude Code** (Anthropic, Claude Sonnet 5.5): AI-assisted software implementation and testing, scripts, web
+  application, documentation and the deployment procedure.
+- **ChatGPT** (OpenAI): structuring the development instructions given to Claude Code, research and planning support,
+  review of scientific interpretations and analytical results, and drafting or revising documentation and presentation
+  materials. We do not claim that ChatGPT directly authored source code.
+
+The code and texts of this repository are therefore AI-assisted or AI-generated and are acknowledged as such here, in
+`package.json` and in `AI_DISCLOSURE.md`. The choice of the challenge and of the approach was made by the human team. No
+scientific conclusion was validated by AI, and no independent human scientific validation has taken place.

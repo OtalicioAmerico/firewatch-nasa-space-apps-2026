@@ -2,7 +2,7 @@
   "name": "nasa-fire-calendar-web",
   "private": true,
   "version": "0.1.0-mock",
-  "description": "Firewatch web application (NASA Space Apps Challenge 2026). Developed with AI assistance (Claude Code); see AI_DISCLOSURE.md.",
+  "description": "Firewatch web application (NASA Space Apps Challenge 2026). Developed with AI assistance (Claude Code, ChatGPT); see AI_DISCLOSURE.md.",
   "license": "MIT",
   "author": "Otalicio Americo de Melo Junior (Ikarus Aurora)",
   "repository": {

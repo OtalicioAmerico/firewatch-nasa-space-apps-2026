@@ -17,28 +17,27 @@ rights over the Ikarus Aurora logos, visual components and original design
 elements. No company registration number, corporate name or trademark
 registration is claimed anywhere in this repository.
 
-## 3. Logos and visual identity (rights reserved)
-* The Ikarus Aurora wing mark (`web/src/assets/brand/ikarus-wing-white.svg`),
-  the name "Ikarus Aurora" as a logo/brand, and the Ikarus Aurora visual
-  identity are **not** licensed under the MIT licence.
-* They are included only so the application builds and renders as published.
-  Publishing the code under MIT **does not** grant any right to use these
-  marks, and does not transfer their ownership.
-* If you fork or reuse this code, replace the logo files and the "Ikarus
-  Aurora" branding (see `web/src/components/Brand.tsx` and
-  `web/src/i18n/*.json`, keys `brand.*`) with your own.
-* The name "Firewatch" is used here as the public name of this independent
-  project; no trademark right is claimed.
+## 3. Logos and brand (rights reserved; everything else can be forked)
+* **Reserved (not under MIT):** the Ikarus Aurora wing mark (file
+  `web/src/assets/brand/ikarus-wing-white.svg`), the name "Ikarus Aurora" used as a logo or brand, and the Ikarus Aurora
+  brand identity. The owner confirms that these remain reserved.
+* Publishing the code under MIT **does not** transfer their ownership and **does not** grant a right to use these marks
+  to present your own product as Ikarus Aurora's.
+* **This reservation does not restrict reproduction, study, modification or forking of the project.** The marks appear
+  only in three places: the SVG file above, `web/src/components/Brand.tsx` (which imports it) and the `brand.*` keys of
+  `web/src/i18n/en-US.json` and `pt-BR.json`. To publish your own version, replace those with your own identity; the
+  build, tests and the scientific method do not depend on them. The file is included only so the application builds and
+  renders as published.
+* The name "Firewatch" is used as the public name of this independent project; no trademark right is claimed.
+* Pending clarification: the Space Apps Terms & Conditions ask that original content be freely available or OSI-licensed.
+  The owner will confirm with the Local Lead that reserving the logo marks (not the code) is acceptable, and will release
+  or replace them if it is not.
 
-## 4. Original Aurora design tokens
-`web/src/design/aurora/{tokens,themes,base}.css` are original Aurora design
-system files authored by the project owner and reused from an earlier private
-project of the same owner (provenance and hashes in
-`web/src/design/aurora-source.json`). The owner authorises their use and redistribution as part of this repository.
-Unless a file header says otherwise they are distributed with the rest of the
-code under the MIT licence (this choice is recorded as pending the owner's
-final confirmation in `docs/LICENCAS_E_ATRIBUICOES.md`). This never extends to
-the logos in section 3.
+## 4. Generic Aurora design tokens (MIT)
+`web/src/design/aurora/{tokens,themes,base}.css` are generic design tokens (colours, spacing, typography variables,
+themes) authored by the project owner and reused from an earlier private project of the same owner (provenance and hashes
+in `web/src/design/aurora-source.json`). **The owner confirms they are licensed under the MIT licence** together with the
+rest of the code, so forks and adaptations may reuse and modify them. They contain no logo.
 
 ## 5. Third-party software
 Dependencies keep their own licences (MIT, ISC, BSD-2/3-Clause, OFL-1.1, ...):
