@@ -19,13 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----------------------------------------------------------------------------
-Scope of this licence (see BRAND_AND_RIGHTS.md for details)
-
-This MIT licence covers the original source code of this repository. It does
-NOT cover, and does not transfer any right in:
-  * the Ikarus Aurora logos, marks and visual identity (reserved; see
-    BRAND_AND_RIGHTS.md);
-  * third-party components (see web/public/THIRD_PARTY_NOTICES.txt);
-  * NASA and IBGE data, which keep their own terms.
