@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "Firewatch · MODIS and VIIRS thermal activity",
+    "title": "Firewatch | MODIS and VIIRS — NASA FIRMS Data",
     "skip": "Skip to content"
   },
   "brand": {
@@ -339,6 +339,44 @@
         "title": "No detections recorded",
         "body": "Nothing was recorded for this filter on this day. That is not evidence of absence."
       }
+    }
+  },
+  "seo": {
+    "home": {
+      "title": "Firewatch | MODIS and VIIRS — NASA FIRMS Data",
+      "description": "Explore historical NASA thermal detections in Tocantins, Brazil, from 2021 to 2025. Compare MODIS and VIIRS observations through interactive maps and calendars.",
+      "h1": "Firewatch: NASA MODIS and VIIRS thermal detections, side by side",
+      "whatTitle": "What you will find",
+      "w1": "**A historical calendar** from 2021 to 2025, with spatial extent, intensity and raw counts of thermal detections for each sensor.",
+      "w2": "**An interactive map** of Tocantins, with experimental 0.25° cells and an evidence explorer that shows each detection and where the data come from.",
+      "w3": "**A MODIS and VIIRS comparison** that takes the observation coverage of the satellites into account and measures spatial agreement only where both could observe.",
+      "w4": "**Documented methodology and limitations**, with open source code under the MIT licence.",
+      "limitsTitle": "Limits and cautions",
+      "limits": "Firewatch is an independent, experimental project without independent scientific validation. A thermal detection is not a confirmed fire, and the project makes no forecasts and issues no alerts. It is not an official NASA product.",
+      "sourcesTitle": "Data and origin",
+      "sources": "Data from NASA FIRMS (MODIS Terra and Aqua; VIIRS NOAA-20) and municipal boundaries from IBGE. The project was developed for the NASA Space Apps Challenge 2026, in the challenge “Harmonization of MODIS and VIIRS Hot Spots”, and uses Tocantins, in Brazil, as its pilot territory.",
+      "noscript": "The interactive application needs JavaScript. This page summarises the project and links to the reading pages."
+    },
+    "about": {
+      "title": "About Firewatch | Ikarus Aurora — NASA Space Apps Challenge 2026",
+      "description": "Meet the story of Firewatch and the Ikarus Aurora team, and learn how to study, reproduce and extend the MODIS and VIIRS comparison of NASA FIRMS data."
+    },
+    "method": {
+      "title": "Methodology | Firewatch — Comparing MODIS and VIIRS",
+      "description": "How Firewatch compares MODIS and VIIRS thermal detections (NASA FIRMS): spatial extent, intensity, observation coverage, agreement between sensors and limitations.",
+      "h1": "Firewatch methodology"
+    },
+    "nav": {
+      "aria": "Public pages",
+      "app": "Open the application",
+      "home": "Home",
+      "about": "About",
+      "method": "Methodology",
+      "github": "Code on GitHub",
+      "otherLang": "Português",
+      "openMethod": "Open the methodology in the application",
+      "openAbout": "Open this page in the application",
+      "contents": "On this page"
     }
   },
   "about": {
