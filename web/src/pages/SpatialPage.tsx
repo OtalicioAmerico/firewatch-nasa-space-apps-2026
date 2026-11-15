@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { ChevronLeft, ChevronRight, Crosshair, Layers, Search } from 'lucide-react'
 import { useApp } from '../state/AppState'
 import { dataSource, type Need } from '../services'
@@ -24,6 +24,12 @@ function SpatialInner() {
   const { state, patch, selectDate } = useApp()
   const { t, f } = useI18n()
   const [reset, setReset] = useState(0)
+  // municipality at the point the user tapped; only valid for the cell tapped, and dropped on any other way of selecting a cell
+  const [tapped, setTapped] = useState<{ cellId: string; name: string } | null>(null)
+  // any way of closing the panel (button, Escape, date change, URL) forgets the tapped point, so a later selection of the same cell never reuses it
+  useEffect(() => {
+    if (!state.selectedCellId) setTapped(null)
+  }, [state.selectedCellId])
   const range = dataSource.getRange()
   const cells = useMemo(() => dataSource.getCellDays(state.date, state.scenario), [state.date, state.scenario])
   const day = useMemo(() => dataSource.getDay(state.date, state.scenario), [state.date, state.scenario])
@@ -82,7 +88,10 @@ function SpatialInner() {
             sensor={state.sensor}
             scenario={state.scenario}
             selectedCellId={state.selectedCellId}
-            onSelectCell={(id) => patch({ selectedCellId: id })}
+            onSelectCell={(id, mun) => {
+              setTapped(id && mun ? { cellId: id, name: mun } : null)
+              patch({ selectedCellId: id })
+            }}
             showCells={state.showCells}
             showPoints={state.showPoints}
             showMunicipalities={state.showMunicipalities}
@@ -132,7 +141,7 @@ function SpatialInner() {
                   {top.map((c) => (
                     <tr key={c.cell.id} className={`clickable${state.selectedCellId === c.cell.id ? ' on' : ''}`}>
                       <td>
-                        <button type="button" className="linkish" onClick={() => patch({ selectedCellId: c.cell.id })} aria-label={t('spatial.top.open', { cell: c.cell.id })}>
+                        <button type="button" className="linkish" onClick={() => { setTapped(null); patch({ selectedCellId: c.cell.id }) }} aria-label={t('spatial.top.open', { cell: c.cell.id })}>
                           {c.cell.i}, {c.cell.j}
                         </button>
                       </td>
@@ -146,7 +155,13 @@ function SpatialInner() {
             )}
           </section>
         </aside>
-        {state.selectedCellId && <EvidencePanel cellId={state.selectedCellId} onClose={() => patch({ selectedCellId: null })} />}
+        {state.selectedCellId && (
+          <EvidencePanel
+            cellId={state.selectedCellId}
+            municipality={state.showMunicipalities && tapped?.cellId === state.selectedCellId ? tapped.name : null}
+            onClose={() => { setTapped(null); patch({ selectedCellId: null }) }}
+          />
+        )}
       </div>
     </div>
   )

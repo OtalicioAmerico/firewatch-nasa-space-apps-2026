@@ -18,6 +18,8 @@ setWorkerUrl(workerUrl)
 // No base-map tiles and no network requests: the map draws only the public region geometry and the cells of the data source.
 const STYLE: StyleSpecification = { version: 8, sources: {}, layers: [{ id: 'bg', type: 'background', paint: { 'background-color': '#eaf0f6' } }] }
 
+const escapeHtml = (v: string): string => v.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c] as string)
+
 const css = (name: string): string => getComputedStyle(document.documentElement).getPropertyValue(name).trim() || '#888'
 
 type Disp = 'BOTH' | 'MODIS' | 'VIIRS' | 'UNCERTAIN' | 'EXCL' | 'NONE'
@@ -58,7 +60,8 @@ interface Props {
   sensor: SensorFilter
   scenario: Scenario
   selectedCellId: string | null
-  onSelectCell: (id: string | null) => void
+  /** `municipality`: IBGE municipality under the clicked/tapped point (null when unknown or the layer is off); never derived from the cell. */
+  onSelectCell: (id: string | null, municipality?: string | null) => void
   showCells: boolean
   showPoints: boolean
   showMunicipalities: boolean
@@ -83,6 +86,11 @@ export function MapView({ date, sensor, scenario, selectedCellId, onSelectCell, 
   cdRef.current = cellDays
   const tRef = useRef(t)
   tRef.current = t
+  const munPopupRef = useRef<Popup | null>(null)
+  const showMunRef = useRef(showMunicipalities)
+  showMunRef.current = showMunicipalities
+  const showCellsRef = useRef(showCells)
+  showCellsRef.current = showCells
 
   // create the map once
   useEffect(() => {
@@ -110,6 +118,22 @@ export function MapView({ date, sensor, scenario, selectedCellId, onSelectCell, 
     if (!compact) map.addControl(new ScaleControl({ unit: 'metric' }), 'bottom-left')
     map.touchZoomRotate.disableRotation()
     const popup = new Popup({ closeButton: false, closeOnClick: false, offset: 10, className: 'nfc-popup' })
+    // municipality name: identified by the IBGE polygon under the pointer (not by the 0.25 degree cell); only while the layer is on
+    const munPopup = new Popup({ closeButton: false, closeOnClick: false, offset: 12, className: 'nfc-popup nfc-mun-popup' })
+    munPopupRef.current = munPopup
+    let munTimer: ReturnType<typeof setTimeout> | undefined
+    const munNameAt = (p: MapLayerMouseEvent['point']): string | null => {
+      if (!map.getLayer('mun-fill')) return null
+      const name = map.queryRenderedFeatures(p, { layers: ['mun-fill'] })[0]?.properties?.nm
+      return typeof name === 'string' && name ? name : null
+    }
+    const munAt = (p: MapLayerMouseEvent['point']): string | null => (showMunRef.current ? munNameAt(p) : null)
+    const showMun = (e: MapLayerMouseEvent, name: string) => {
+      const el = document.createElement('div')
+      el.className = 'map-mun'
+      el.textContent = name
+      munPopup.setLngLat(e.lngLat).setDOMContent(el).addTo(map)
+    }
     map.on('load', () => {
       map.addSource('mun', { type: 'geojson', data: MUNICIPALITIES })
       map.addSource('outline', { type: 'geojson', data: OUTLINE_FEATURE })
@@ -149,11 +173,11 @@ export function MapView({ date, sensor, scenario, selectedCellId, onSelectCell, 
     })
     map.on('click', 'cells-fill', (e) => {
       const f = e.features?.[0]
-      if (f) onSelectRef.current(String(f.properties?.id))
+      if (f) onSelectRef.current(String(f.properties?.id), munAt(e.point))
     })
     map.on('click', 'cells-hatch', (e) => {
       const f = e.features?.[0]
-      if (f) onSelectRef.current(String(f.properties?.id))
+      if (f) onSelectRef.current(String(f.properties?.id), munAt(e.point))
     })
     const hover = (e: MapLayerMouseEvent) => {
       const f = e.features?.[0]
@@ -161,10 +185,12 @@ export function MapView({ date, sensor, scenario, selectedCellId, onSelectCell, 
       map.getCanvas().style.cursor = 'pointer'
       const cd = cdRef.current.find((c) => c.cell.id === f.properties?.id)
       if (!cd) return
+      munPopup.remove()
+      const mun = munAt(e.point)
       const tt = tRef.current
       popup
         .setLngLat(e.lngLat)
-        .setHTML(`<div class="map-pop"><b>${cd.cell.id}</b><span>${tt(`category.${cd.category}.label`)}</span><span>${tt(`map.pop.counts.${dataSource.mode}`, { m: cd.modisCount, v: cd.viirsCount })}</span></div>`)
+        .setHTML(`<div class="map-pop">${mun ? `<strong class="map-mun-name">${escapeHtml(mun)}</strong>` : ''}<b>${cd.cell.id}</b><span>${tt(`category.${cd.category}.label`)}</span><span>${tt(`map.pop.counts.${dataSource.mode}`, { m: cd.modisCount, v: cd.viirsCount })}</span></div>`)
         .addTo(map)
     }
     map.on('mousemove', 'cells-fill', hover)
@@ -175,9 +201,31 @@ export function MapView({ date, sensor, scenario, selectedCellId, onSelectCell, 
     }
     map.on('mouseleave', 'cells-fill', leave)
     map.on('mouseleave', 'cells-hatch', leave)
+    // desktop: municipality tooltip on hover where no cell tooltip is shown (cells layer off, or no cell under the pointer)
+    map.on('mousemove', (e) => {
+      if (!window.matchMedia('(hover: hover)').matches) return
+      const overCell = showCellsRef.current && map.getLayer('cells-fill') && map.queryRenderedFeatures(e.point, { layers: ['cells-fill', 'cells-hatch'] }).length > 0
+      const name = overCell ? null : munAt(e.point)
+      if (name) {
+        map.getCanvas().style.cursor = ''
+        showMun(e, name)
+      } else if (!overCell) munPopup.remove()
+    })
+    map.getCanvas().addEventListener('mouseleave', () => munPopup.remove())
+    // touch: tap shows the municipality name for a few seconds (the tap still selects the cell as before)
+    map.on('click', (e) => {
+      if (window.matchMedia('(hover: hover)').matches) return
+      const name = munAt(e.point)
+      clearTimeout(munTimer)
+      if (!name) return munPopup.remove()
+      showMun(e, name)
+      munTimer = setTimeout(() => munPopup.remove(), 3500)
+    })
     const ro = new ResizeObserver(() => map.resize())
     ro.observe(host.current)
     return () => {
+      clearTimeout(munTimer)
+      munPopup.remove()
       ro.disconnect()
       readyRef.current = false
       map.remove()
@@ -224,6 +272,7 @@ export function MapView({ date, sensor, scenario, selectedCellId, onSelectCell, 
     vis('cells-border', showCells)
     vis('mun-line', showMunicipalities)
     vis('points-circle', showPoints)
+    if (!showMunicipalities) munPopupRef.current?.remove()
   }, [showCells, showPoints, showMunicipalities, readyRef.current])
 
   // individual detection points (needs the detections of the month to be loaded when enabled)

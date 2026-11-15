@@ -24,7 +24,8 @@ ap.add_argument("--tol-contorno", type=float, default=0.006)
 a = ap.parse_args()
 base = os.path.join(a.ibge, "IBGE_2025", "municipios", "BR_Municipios_2025")
 cod = _read_dbf_column(base + ".dbf", "CD_MUN")
-nom = _read_dbf_column(base + ".dbf", "NM_MUN")
+# the IBGE DBF stores UTF-8; _read_dbf_column decodes as latin1, so recover the real accents of the names
+nom = [n.encode("latin1").decode("utf-8") for n in _read_dbf_column(base + ".dbf", "NM_MUN")]
 keep = {i + 1 for i, c in enumerate(cod) if c.startswith("17")}
 shp = open(base + ".shp", "rb").read()
 

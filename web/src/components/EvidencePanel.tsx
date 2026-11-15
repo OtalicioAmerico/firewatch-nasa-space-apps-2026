@@ -11,7 +11,8 @@ import { addDays } from '../lib/format'
 
 const SHOWN = 40
 
-export function EvidencePanel({ cellId, onClose }: { cellId: string; onClose: () => void }) {
+/** `municipality`: name of the IBGE polygon at the point the user tapped on the map. Omitted when there is no such point (list or keyboard selection) or it cannot be identified. */
+export function EvidencePanel({ cellId, onClose, municipality }: { cellId: string; onClose: () => void; municipality?: string | null }) {
   const { state } = useApp()
   const { t, f } = useI18n()
   const closeRef = useRef<HTMLButtonElement>(null)
@@ -41,6 +42,11 @@ export function EvidencePanel({ cellId, onClose }: { cellId: string; onClose: ()
         <div>
           <span className="eyebrow">{t(`evidence.eyebrow.${dataSource.mode}`)}</span>
           <h2>{t('evidence.cell', { i: cell?.i ?? '', j: cell?.j ?? '' })}</h2>
+          {municipality && (
+            <div className="drawer-mun">
+              <span className="muted">{t('evidence.municipality')}:</span> <b>{municipality}</b>
+            </div>
+          )}
           {cell && (
             <div className="muted mono" style={{ fontSize: 'var(--text-xs)' }}>
               {cell.id} · {f.dec(cell.lat0, 2)}° / {f.dec(cell.lat1, 2)}° · {f.dec(cell.lon0, 2)}° / {f.dec(cell.lon1, 2)}° ({t('evidence.cellSize')})

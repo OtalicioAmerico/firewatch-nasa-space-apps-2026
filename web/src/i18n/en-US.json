@@ -345,6 +345,7 @@
     "eyebrow": { "MOCK": "Evidence explorer · simulated", "REAL": "Evidence explorer · NASA FIRMS records" },
     "cell": "Cell {i}, {j}",
     "cellSize": "0.25° cell",
+    "municipality": "Municipality at selected location",
     "close": "Close evidence panel",
     "clear": "Clear selection",
     "interpretation": "Interpretation",
