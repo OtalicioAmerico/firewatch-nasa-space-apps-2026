@@ -1,0 +1,55 @@
+/* NASA Fire Calendar product tokens, layered ON TOP of the vendored Aurora tokens (tokens.css / themes.css).
+   Category colours are chosen for distinctness in light and dark themes; meaning is never carried by colour alone
+   (patterns and glyphs are used as well). */
+:root,
+[data-theme='ikarus-light'] {
+  color-scheme: light;
+  --nfc-navy: #152238;
+  --nfc-navy-2: #1d2e4d;
+  --nfc-navy-text: #dbe4f0;
+  --nfc-navy-muted: #8fa3bf;
+  --nfc-navy-border: rgba(255, 255, 255, 0.09);
+
+  --cat-modis: #d97706;
+  --cat-modis-text: #92400e;
+  --cat-modis-soft: #fef3c7;
+  --cat-viirs: #6d4ae0;
+  --cat-viirs-text: #5233c4;
+  --cat-viirs-soft: #ede9fe;
+  --cat-both: #0e9f6e;
+  --cat-both-text: #046c4e;
+  --cat-both-soft: #d1fae5;
+  --cat-uncertain: #64748b;
+  --cat-uncertain-soft: #e2e8f0;
+  --map-bg: #eaf0f6;
+  --map-land: #f9fbfd;
+  --map-line: #b6c3d4;
+  --map-outline: #152238;
+  --nfc-accent-text: #0a7a4b;
+}
+
+[data-theme='ikarus-dark'] {
+  color-scheme: dark;
+  --nfc-navy: #0b1424;
+  --nfc-navy-2: #14213a;
+  --nfc-navy-text: #dbe4f0;
+  --nfc-navy-muted: #8fa3bf;
+  --nfc-navy-border: rgba(255, 255, 255, 0.08);
+
+  --cat-modis: #fbbf24;
+  --cat-modis-text: #fcd34d;
+  --cat-modis-soft: rgba(251, 191, 36, 0.16);
+  --cat-viirs: #a78bfa;
+  --cat-viirs-text: #c4b5fd;
+  --cat-viirs-soft: rgba(167, 139, 250, 0.18);
+  --cat-both: #34d399;
+  --cat-both-text: #6ee7b7;
+  --cat-both-soft: rgba(52, 211, 153, 0.16);
+  --cat-uncertain: #94a3b8;
+  --cat-uncertain-soft: rgba(148, 163, 184, 0.16);
+  --map-bg: #0c121d;
+  --map-land: #141c2b;
+  --map-line: #34425a;
+  --map-outline: #58ed85;
+  --nfc-accent-text: #58ed85;
+}

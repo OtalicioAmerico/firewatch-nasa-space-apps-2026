@@ -1,0 +1,37 @@
+# segredos
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+secrets*
+credentials*
+*.token
+# dados brutos e dumps
+data/
+dados/
+raw/
+*.tsv
+*.csv
+*.sql
+*.dump
+*.bak
+*.zip
+*.shp
+*.dbf
+*.shx
+# locais
+.vscode/
+.idea/
+.claude/
+__pycache__/
+*.pyc
+node_modules/
+*.log
+Thumbs.db
+
+# caches e saidas locais
+tools/validacao/.cache/
+!resultados/**/*.csv
+resultados/**/evidencia_*.csv
+__pycache__/

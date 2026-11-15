@@ -1,0 +1,74 @@
+{
+  "purpose": "Provenance and attribution record for design assets reused in NASA Fire Calendar (Mission 06A mockup). Technical documentation only; not shown in the public UI.",
+  "source": {
+    "project": "IkarusAuroraFirewatch (legacy project, read-only reference)",
+    "path": "IkarusAuroraFirewatch/web/src/design/aurora",
+    "repositoryHead": "2b5b084",
+    "originalDesignSource": "IkarusAuroraFlow commit 22d2518 (as recorded in the reference repository)",
+    "accessMode": "read-only; the reference project was not modified"
+  },
+  "filesCopiedVerbatim": [
+    {
+      "file": "aurora/tokens.css",
+      "sha256": "de1c008279dd61d45330b2d1f71ff399e87e0d353e393e0c06476be56c2f87b0"
+    },
+    {
+      "file": "aurora/themes.css",
+      "sha256": "6a9e9b8f389257d2874d0c29538fbbdbd514d00413f825ab54ad631adf50eaff"
+    },
+    {
+      "file": "aurora/base.css",
+      "sha256": "a5b5b4620b3a71f78f74ee934d84f658932b7d01f8f0fd726fc617ba0dee6e69"
+    }
+  ],
+  "notCopied": [
+    "Ikarus brand logos other than the single wing mark listed in brandAssetsCopied",
+    "Any Supabase client, configuration, keys or data",
+    "Any application component code from the legacy project"
+  ],
+  "productLayer": [
+    "design/product-tokens.css",
+    "styles/app.css",
+    "styles/pages.css"
+  ],
+  "thirdParty": [
+    {
+      "name": "react / react-dom",
+      "licence": "MIT"
+    },
+    {
+      "name": "maplibre-gl",
+      "licence": "BSD-3-Clause"
+    },
+    {
+      "name": "lucide-react",
+      "licence": "ISC"
+    },
+    {
+      "name": "@fontsource/inter (Inter typeface)",
+      "licence": "OFL-1.1 (font), MIT (package)"
+    },
+    {
+      "name": "vite, @vitejs/plugin-react, typescript, oxlint",
+      "licence": "MIT / Apache-2.0 (build tooling, not shipped)"
+    }
+  ],
+  "geometry": {
+    "source": "IBGE, Malha Municipal 2025 (public boundaries), Tocantins",
+    "files": [
+      "mock/geo/tocantins-contorno.json",
+      "mock/geo/tocantins-municipios.json"
+    ],
+    "generator": "tools/mock_geo/gerar_geometria_tocantins.py",
+    "note": "Only real boundaries; all data drawn on them is simulated."
+  },
+  "verifyNote": "Licence identifiers reflect the package metadata at install time and should be re-checked before any public release.",
+  "brandAssetsCopied": [
+    {
+      "file": "assets/brand/ikarus-wing-white.svg",
+      "sha256": "e20f6a767f2e5cef0ed0690324973f1bc5a22807b70cc36f9fe7dbf0c63c13be",
+      "origin": "IkarusAuroraFlow frontend/src/assets/brand/ikarus-wing-white.svg (same owner), copied verbatim on 2026-11-15 for the sidebar identity",
+      "rights": "Authorial identity of the project owner; logo rights reserved, NOT covered by the MIT licence (see BRAND_AND_RIGHTS.md)"
+    }
+  ]
+}

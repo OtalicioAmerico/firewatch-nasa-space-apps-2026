@@ -1,0 +1,230 @@
+:root,
+[data-theme="ikarus-light"] {
+  /* Customizable identity tokens: controlled by Ikarus, never by the client UI. */
+  --theme-brand-primary: #152238;
+  --theme-brand-primary-hover: #0D1829;
+  --theme-brand-primary-soft: #E8EEF6;
+  --theme-brand-accent: #58ED85;
+  --theme-brand-violet: #8B5CF6;
+  --theme-brand-magenta: #EC4899;
+  /* Sidebar glass — base tones only, opacidade/blur aplicados em shell.css via
+     color-mix (mesmo efeito visual da app-emprestimos-saas-V1.1.2, mas o token
+     fica hex solido: contraste checavel pela tela de branding, compativel com
+     <input type="color"> que nao suporta alpha). */
+  --theme-sidebar-bg: #FFFFFF;
+  --theme-sidebar-bg-strong: #F8FAFC;
+  --theme-sidebar-border: #E2E8F0;
+  --theme-sidebar-text: #152238;
+  --theme-sidebar-muted: #64748B;
+  --theme-sidebar-icon: #64748B;
+  --theme-sidebar-card-bg: #F8FAFC;
+  --sidebar-glass-opacity: 84%;
+  --sidebar-card-glass-opacity: 76%;
+  --sidebar-border-glass-opacity: 85%;
+
+  /* Protected neutral tokens: preserve legibility, density, and product consistency. */
+  --theme-neutral-background: #F6F7F9;
+  --theme-neutral-surface: #FFFFFF;
+  --theme-neutral-text: #111827;
+  --theme-neutral-muted: #6B7280;
+  --theme-neutral-border: #E2E8F0;
+
+  /* Protected semantic tokens: theme must not change operational meaning. */
+  --theme-semantic-success: #16A34A;
+  --theme-semantic-success-soft: #D7FBE3;
+  --theme-semantic-warning: #F59E0B;
+  --theme-semantic-warning-soft: #FFEDB5;
+  --theme-semantic-danger: #EF4444;
+  --theme-semantic-danger-soft: #FFE0E0;
+  --theme-semantic-info: #06B6D4;
+  --theme-semantic-info-soft: #C8F6FF;
+
+  /* Public component tokens: components consume these aliases only. */
+  --color-primary: var(--theme-brand-primary);
+  --color-primary-hover: var(--theme-brand-primary-hover);
+  --color-primary-soft: var(--theme-brand-primary-soft);
+  --color-on-primary: #FFFFFF;
+  --color-accent: var(--theme-brand-accent);
+  --color-accent-soft: #E9FFF1;
+  --color-on-accent: #07111F;
+  --color-on-dark: #F0F4F8;
+  --color-background: var(--theme-neutral-background);
+  --color-surface: var(--theme-neutral-surface);
+  --color-text: var(--theme-neutral-text);
+  --color-muted: var(--theme-neutral-muted);
+  --color-muted-soft: #5F6B80;
+  --color-border: var(--theme-neutral-border);
+  --color-hover-border: #CBD5E1;
+  --color-overlay-backdrop: rgba(15, 23, 42, 0.42);
+
+  --color-success: var(--theme-semantic-success);
+  --color-success-soft: var(--theme-semantic-success-soft);
+  --color-warning: var(--theme-semantic-warning);
+  --color-warning-soft: var(--theme-semantic-warning-soft);
+  --color-danger: var(--theme-semantic-danger);
+  --color-danger-soft: var(--theme-semantic-danger-soft);
+  --color-info: var(--theme-semantic-info);
+  --color-info-soft: var(--theme-semantic-info-soft);
+  --color-icon-primary: #152238;
+  --color-icon-primary-soft: #E8EEF6;
+  --color-icon-success: #22C55E;
+  --color-icon-success-soft: #D7FBE3;
+  --color-icon-warning: #F59E0B;
+  --color-icon-warning-soft: #FFEDB5;
+  --color-icon-danger: #EF4444;
+  --color-icon-danger-soft: #FFE0E0;
+  --color-icon-info: #06B6D4;
+  --color-icon-info-soft: #C8F6FF;
+  --color-icon-purple: #8B5CF6;
+  --color-icon-purple-soft: #E9DFFF;
+  --color-icon-neutral: #64748B;
+  --color-icon-neutral-soft: #DDE6F0;
+
+  /* Aurora accents: decorative use only (dashboards/charts/ambient effects), never
+     for text or primary action. */
+  --color-aurora-green: var(--theme-brand-accent);
+  --color-aurora-green-soft: #F0FDF4;
+  --color-aurora-green-border: #A7F3D0;
+  --color-aurora-violet: var(--theme-brand-violet);
+  --color-aurora-violet-soft: #F5F3FF;
+  --color-aurora-violet-border: #DDD6FE;
+  --color-aurora-magenta: var(--theme-brand-magenta);
+  --color-aurora-magenta-soft: #FDF2F8;
+  --color-aurora-magenta-border: #FBCFE8;
+  --color-aurora-amber: #F59E0B;
+  --color-aurora-amber-soft: #FFFBEB;
+  --color-aurora-amber-border: #FDE68A;
+  --gradient-aurora: linear-gradient(90deg, #35B874 0%, #6863DC 55%, #EC4899 100%);
+
+  /* Status family tokens (badge/tag). */
+  --status-green-bg: #F0FDF4;
+  --status-green-bd: #A7F3D0;
+  --status-green-fg: #059669;
+  --status-violet-bg: #F5F3FF;
+  --status-violet-bd: #DDD6FE;
+  --status-violet-fg: #7C3AED;
+  --status-magenta-bg: #FDF2F8;
+  --status-magenta-bd: #FBCFE8;
+  --status-magenta-fg: #DB2777;
+  --status-amber-bg: #FFFBEB;
+  --status-amber-bd: #FDE68A;
+  --status-amber-fg: #D97706;
+  --status-neutral-bg: #F8FAFC;
+  --status-neutral-bd: #E2E8F0;
+  --status-neutral-fg: #64748B;
+
+  --color-focus-ring: color-mix(in srgb, var(--color-primary) 28%, transparent);
+  --color-focus-ring-danger: color-mix(in srgb, var(--color-danger) 28%, transparent);
+  --color-sidebar-bg: var(--theme-sidebar-bg);
+  --color-sidebar-bg-strong: var(--theme-sidebar-bg-strong);
+  --color-sidebar-border: var(--theme-sidebar-border);
+  --color-sidebar-text: var(--theme-sidebar-text);
+  --color-sidebar-muted: var(--theme-sidebar-muted);
+  --color-sidebar-active-bg: var(--color-primary);
+  --color-sidebar-active: var(--color-sidebar-active-bg);
+  --color-sidebar-active-text: #FFFFFF;
+  --color-sidebar-icon: var(--theme-sidebar-icon);
+  --color-sidebar-card-bg: var(--theme-sidebar-card-bg);
+  --color-topbar-bg: color-mix(in srgb, var(--color-surface) 92%, transparent);
+
+  --shadow-xs: 0 4px 12px color-mix(in srgb, var(--color-text) 4%, transparent);
+  --shadow-sm: 0 1px 2px color-mix(in srgb, var(--color-text) 7%, transparent), 0 8px 22px color-mix(in srgb, var(--color-text) 5%, transparent);
+  --shadow-md: 0 12px 28px color-mix(in srgb, var(--color-text) 8%, transparent);
+  --shadow-lg: 0 24px 60px color-mix(in srgb, var(--color-text) 16%, transparent);
+  --shadow-field: 0 2px 6px color-mix(in srgb, var(--color-text) 3%, transparent);
+  --shadow-cta: 0 12px 28px color-mix(in srgb, var(--color-accent) 30%, transparent);
+  --shadow-violet: 0 12px 28px color-mix(in srgb, var(--theme-brand-violet) 30%, transparent);
+  --shadow-active: 0 10px 20px color-mix(in srgb, var(--color-primary) 26%, transparent);
+}
+
+/* ── Dark theme ──────────────────────────────────────────────────────────
+   Overrides only; anything not redefined here cascades from ikarus-light
+   above (both selectors share :root specificity via [data-theme], so the
+   dark block must come after light in source order to win). */
+[data-theme="ikarus-dark"] {
+  --theme-brand-primary: #4A90D9;
+  --theme-brand-primary-hover: #5BA3E8;
+  --theme-brand-primary-soft: #1E2D40;
+  --theme-sidebar-bg: #1A1F2E;
+  --theme-sidebar-bg-strong: #1A1F2E;
+  --theme-sidebar-border: #2D3748;
+  --theme-sidebar-text: #E2E8F0;
+  --theme-sidebar-muted: #94A3B8;
+  --theme-sidebar-icon: #94A3B8;
+  --theme-sidebar-card-bg: #0F1117;
+  --sidebar-glass-opacity: 94%;
+  --sidebar-card-glass-opacity: 60%;
+  --sidebar-border-glass-opacity: 85%;
+
+  --theme-neutral-background: #0F1117;
+  --theme-neutral-surface: #171B26;
+  --theme-neutral-text: #E5E9F0;
+  --theme-neutral-muted: #94A3B8;
+  --theme-neutral-border: #2B3444;
+
+  --theme-semantic-success: #34D399;
+  --theme-semantic-success-soft: rgba(52, 211, 153, 0.14);
+  --theme-semantic-warning: #FBBF24;
+  --theme-semantic-warning-soft: rgba(251, 191, 36, 0.14);
+  --theme-semantic-danger: #F87171;
+  --theme-semantic-danger-soft: rgba(248, 113, 113, 0.14);
+  --theme-semantic-info: #22D3EE;
+  --theme-semantic-info-soft: rgba(34, 211, 238, 0.14);
+
+  --color-on-primary: #0B121F;
+  --color-on-accent: #07111F;
+  --color-on-dark: #F0F4F8;
+  --color-accent-soft: rgba(88, 237, 133, 0.14);
+  --color-muted-soft: #94A3B8;
+  --color-hover-border: #3B4658;
+  --color-overlay-backdrop: rgba(3, 6, 12, 0.6);
+
+  --color-icon-primary: var(--theme-brand-primary);
+  --color-icon-primary-soft: var(--theme-brand-primary-soft);
+  --color-icon-success: var(--theme-semantic-success);
+  --color-icon-success-soft: var(--theme-semantic-success-soft);
+  --color-icon-warning: var(--theme-semantic-warning);
+  --color-icon-warning-soft: var(--theme-semantic-warning-soft);
+  --color-icon-danger: var(--theme-semantic-danger);
+  --color-icon-danger-soft: var(--theme-semantic-danger-soft);
+  --color-icon-info: var(--theme-semantic-info);
+  --color-icon-info-soft: var(--theme-semantic-info-soft);
+  --color-icon-purple: #A78BFA;
+  --color-icon-purple-soft: rgba(167, 139, 250, 0.14);
+  --color-icon-neutral: #94A3B8;
+  --color-icon-neutral-soft: rgba(148, 163, 184, 0.14);
+
+  --color-aurora-green-soft: rgba(88, 237, 133, 0.12);
+  --color-aurora-green-border: rgba(88, 237, 133, 0.3);
+  --color-aurora-violet-soft: rgba(139, 92, 246, 0.12);
+  --color-aurora-violet-border: rgba(139, 92, 246, 0.3);
+  --color-aurora-magenta-soft: rgba(236, 72, 153, 0.12);
+  --color-aurora-magenta-border: rgba(236, 72, 153, 0.3);
+  --color-aurora-amber-soft: rgba(245, 158, 11, 0.12);
+  --color-aurora-amber-border: rgba(245, 158, 11, 0.3);
+
+  --status-green-bg: rgba(5, 150, 105, 0.16);
+  --status-green-bd: rgba(52, 211, 153, 0.32);
+  --status-green-fg: #34D399;
+  --status-violet-bg: rgba(124, 58, 237, 0.16);
+  --status-violet-bd: rgba(167, 139, 250, 0.32);
+  --status-violet-fg: #A78BFA;
+  --status-magenta-bg: rgba(219, 39, 119, 0.16);
+  --status-magenta-bd: rgba(244, 114, 182, 0.32);
+  --status-magenta-fg: #F472B6;
+  --status-amber-bg: rgba(217, 119, 6, 0.16);
+  --status-amber-bd: rgba(251, 191, 36, 0.32);
+  --status-amber-fg: #FBBF24;
+  --status-neutral-bg: rgba(148, 163, 184, 0.12);
+  --status-neutral-bd: rgba(148, 163, 184, 0.28);
+  --status-neutral-fg: #94A3B8;
+
+  --shadow-xs: 0 4px 12px rgba(0, 0, 0, 0.22);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.24), 0 8px 22px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 12px 28px rgba(0, 0, 0, 0.32);
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.42);
+  --shadow-field: 0 2px 6px rgba(0, 0, 0, 0.18);
+  --shadow-cta: 0 12px 28px color-mix(in srgb, var(--color-accent) 26%, transparent);
+  --shadow-violet: 0 12px 28px color-mix(in srgb, var(--theme-brand-violet) 26%, transparent);
+  --shadow-active: 0 10px 20px color-mix(in srgb, var(--color-primary) 34%, transparent);
+}

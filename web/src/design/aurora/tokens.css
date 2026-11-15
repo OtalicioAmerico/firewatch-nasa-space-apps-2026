@@ -1,0 +1,69 @@
+:root {
+  /* Protected structural scale from DESIGN_SYSTEM_V1. */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+
+  /* Radius scale — calibrated for a product/admin register: enough softness to feel
+     considered, restrained enough to stay a tool, not a consumer app (DESIGN_SYSTEM_V2
+     documents a rounder 14-28 scale from app-emprestimos-saas-V1.1.2; deliberately not
+     copied 1:1 here, see docs/DESIGN_SYSTEM_V2.md revision note). */
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-pill: 999px;
+
+  /* Protected typography and layout tokens. */
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-display: clamp(28px, 3vw, 40px);
+
+  --line-tight: 1.2;
+  --line-normal: 1.5;
+  --line-comfortable: 1.7;
+
+  --icon-sm: 16px;
+  --icon-md: 18px;
+  --icon-lg: 22px;
+
+  --density-control-height: 36px;
+  --density-control-height-sm: 30px;
+  --density-card-padding: 18px;
+  --density-table-cell-padding: 12px 13px;
+
+  --layout-sidebar-width: 252px;
+  --layout-sidebar-collapsed-width: 68px;
+  --layout-topbar-height: 64px;
+  --layout-content-max: 1440px;
+
+  /* Breakpoint registry — fonte de verdade pros literais px espalhados em
+     responsive.css/CSS de componente. Promovido da camada Foundation validada
+     no IkarusAuroraClinicas (2026-09-18). */
+  --bp-tablet: 1180px;
+  --bp-mobile-wide: 860px;
+  --bp-mobile: 560px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Semantic z-index scale — never use an arbitrary value outside this list. */
+  --z-sticky: 10;
+  --z-drawer-backdrop: 40;
+  --z-drawer: 41;
+  --z-modal-backdrop: 60;
+  --z-modal: 61;
+  --z-toast: 70;
+  --z-tooltip: 80;
+}

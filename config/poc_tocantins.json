@@ -1,0 +1,25 @@
+{
+  "nome": "poc_tocantins_julho_2025_2026",
+  "aviso": "EXPERIMENTAL / NAO VALIDADO. Deteccoes termicas nao sao incendios confirmados.",
+  "regiao": {"tipo": "ibge_uf", "uf": "17", "nome": "Tocantins"},
+  "dias": ["2025-07-21", "2025-07-22", "2025-07-23", "2025-07-24", "2025-07-25",
+           "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-25"],
+  "entradas": [
+    {"arquivo": "NASA_FIRMS/lot3/MODIS_SP/20250721/baa5ac1cffbb4902a2d1c697968bd981.csv", "produto": "MODIS_SP",
+     "sha256": "463110a06a88beb6fbc8e802b9614b54c9770925376397e626709d80cd9e9fc0", "linhas": 6890},
+    {"arquivo": "NASA_FIRMS/lot3/MODIS_SP/20260721/4343bbca678d4c29b111e9c4fac6a8fc.csv", "produto": "MODIS_SP",
+     "sha256": "4d75e290ed45db25f51b74bd6f932f001369f0fa769a5b1b6f8fe2ff4a198553", "linhas": 2600},
+    {"arquivo": "NASA_FIRMS/lot2/VIIRS_NOAA20_SP/20250721/d365b6a9a66d4f3ebaaf578e663ddcf9.csv", "produto": "VIIRS_NOAA20_SP",
+     "sha256": "7a120b74842ea41c2c1c7f39e61b4b5de9fadb4a7cbfe6e99c8fe7329c857cf9", "linhas": 21827},
+    {"arquivo": "NASA_FIRMS/raw_stageB/VIIRS_NOAA20_SP/20260721/292f9b7cd86d4d948f3cc99fee031ed7.csv", "produto": "VIIRS_NOAA20_SP",
+     "sha256": "ca5954d9bc62f1f87d83b36ba4ceba40c561fb2598aab149983b40627387670b", "linhas": 11255},
+    {"arquivo": "NASA_FIRMS/raw_stageB/VIIRS_NOAA20_SP/20260721/e22d3f8ad4fe45afb712978a0df0af7a.csv", "produto": "VIIRS_NOAA20_SP",
+     "sha256": "ca5954d9bc62f1f87d83b36ba4ceba40c561fb2598aab149983b40627387670b", "linhas": 11255}
+  ],
+  "satelites_requeridos": {"MODIS": ["Terra", "Aqua"], "VIIRS": ["N20"]},
+  "cobertura": {"min_ratio": 0.25, "agrupar_por_ano": true},
+  "celulas": {"principal": 0.25, "sensibilidade": [0.1, 0.5]},
+  "nulo_deslocamento_graus": 0.3,
+  "correspondencia": {"modis": "Aqua", "viirs": "N20", "raios_m": [500, 1000, 3000], "raio_principal_m": 1000,
+                      "janela_min": [60, 150]}
+}

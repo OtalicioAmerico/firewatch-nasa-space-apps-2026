@@ -1,0 +1,36 @@
+{
+  "name": "nasa-fire-calendar-web",
+  "private": true,
+  "version": "0.1.0-mock",
+  "description": "Firewatch web application (NASA Space Apps Challenge 2026). Developed with AI assistance (Claude Code); see AI_DISCLOSURE.md.",
+  "license": "MIT",
+  "author": "Otalicio Americo de Melo Junior (Ikarus Aurora)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OtalicioAmerico/firewatch-nasa-space-apps-2026.git"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "oxlint",
+    "test": "node --import ./tests/register.mjs --test \"tests/**/*.test.ts\""
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "lucide-react": "^1.72.0",
+    "maplibre-gl": "^6.16.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "oxlint": "^1.90.0",
+    "typescript": "~7.0.2",
+    "vite": "^8.3.6"
+  }
+}

@@ -1,0 +1,1273 @@
+{
+ "celulas": {
+  "0.1": {
+   "celulas_dia_com_deteccao": 831,
+   "concordancia": {
+    "comparaveis": {
+     "A_AMBOS": 239,
+     "A_MODIS": 373,
+     "A_UNIAO": 760,
+     "A_VIIRS": 626,
+     "K_jaccard": 0.3144736842105263,
+     "SO_MODIS": 134,
+     "SO_VIIRS": 387,
+     "dias": 9
+    },
+    "todos": {
+     "A_AMBOS": 247,
+     "A_MODIS": 382,
+     "A_UNIAO": 831,
+     "A_VIIRS": 696,
+     "K_jaccard": 0.2972322503008424,
+     "SO_MODIS": 135,
+     "SO_VIIRS": 449,
+     "dias": 10
+    }
+   },
+   "daily": [
+    {
+     "A_AMBOS": 22,
+     "A_MODIS": 30,
+     "A_UNIAO": 83,
+     "A_VIIRS": 75,
+     "I_MODIS": 0.7142857142857143,
+     "I_VIIRS": 1.0416666666666667,
+     "K_jaccard": 0.26506024096385544,
+     "K_nulo_deslocado": 0.009615384615384616,
+     "R_conjunto": 0.8779761904761905,
+     "SO_MODIS": 8,
+     "SO_VIIRS": 53,
+     "ambos_esperado_indep": 0.9799651567944251,
+     "celulas_universo": 2296,
+     "comparavel": true,
+     "dia": "2025-07-21",
+     "lift_vs_indep": 22.44977777777778,
+     "motivos_nao_comparavel": "",
+     "n_deteccoes_por_satelite": "{\"Aqua\": 55, \"N20\": 281, \"Terra\": 13}",
+     "ref_mediana_A_MODIS": 42,
+     "ref_mediana_A_VIIRS": 72
+    },
+    {
+     "A_AMBOS": 21,
+     "A_MODIS": 24,
+     "A_UNIAO": 79,
+     "A_VIIRS": 76,
+     "I_MODIS": 0.5714285714285714,
+     "I_VIIRS": 1.0555555555555556,
+     "K_jaccard": 0.26582278481012656,
+     "K_nulo_deslocado": 0.007575757575757576,
+     "R_conjunto": 0.8134920634920635,
+     "SO_MODIS": 3,
+     "SO_VIIRS": 55,
+     "ambos_esperado_indep": 0.794425087108014,
+     "celulas_universo": 2296,
+     "comparavel": true,
+     "dia": "2025-07-22",
+     "lift_vs_indep": 26.434210526315788,
+     "motivos_nao_comparavel": "",
+     "n_deteccoes_por_satelite": "{\"Aqua\": 11, \"N20\": 221, \"Terra\": 36}",
+     "ref_mediana_A_MODIS": 42,
+     "ref_mediana_A_VIIRS": 72
+    },
+    {
+     "A_AMBOS": 24,
+     "A_MODIS": 49,
+     "A_UNIAO": 76,
+     "A_VIIRS": 51,
+     "I_MODIS": 1.1666666666666667,
+     "I_VIIRS": 0.7083333333333334,
+     "K_jaccard": 0.3157894736842105,
+     "K_nulo_deslocado": 0.01525458668315811,
+     "R_conjunto": 0.9375,
+     "SO_MODIS": 25,
+     "SO_VIIRS": 27,
+     "ambos_esperado_indep": 1.0884146341463414,
+     "celulas_universo": 2296,
+     "comparavel": true,
+     "dia": "2025-07-23",
+     "lift_vs_indep": 22.050420168067227,
+     "motivos_nao_comparavel": "",
+     "n_deteccoes_por_satelite": "{\"Aqua\": 84, \"N20\": 162, \"Terra\": 7}",
+     "ref_mediana_A_MODIS": 42,
+     "ref_mediana_A_VIIRS": 72
+    },
+    {
+     "A_AMBOS": 20,
+     "A_MODIS": 29,
+     "A_UNIAO": 71,
+     "A_VIIRS": 62,
+     "I_MODIS": 0.6904761904761905,
+     "I_VIIRS": 0.8611111111111112,
+     "K_jaccard": 0.28169014084507044,
+     "K_nulo_deslocado": 0.028345959595959595,
+     "R_conjunto": 0.7757936507936508,
+     "SO_MODIS": 9,
+     "SO_VIIRS": 42,
+     "ambos_esperado_indep": 0.7831010452961672,
+     "celulas_universo": 2296,
+     "comparavel": true,
+     "dia": "2025-07-24",
+     "lift_vs_indep": 25.539488320355954,
+     "motivos_nao_comparavel": "",
+     "n_deteccoes_por_satelite": "{\"Aqua\": 10, \"N20\": 213, \"Terra\": 36}",
+     "ref_mediana_A_MODIS": 42,
+     "ref_mediana_A_VIIRS": 72
+    },
+    {
+     "A_AMBOS": 33,
+     "A_MODIS": 42,
+     "A_UNIAO": 81,
+     "A_VIIRS": 72,
+     "I_MODIS": 1.0,
+     "I_VIIRS": 1.0,
+     "K_jaccard": 0.4074074074074074,
+     "K_nulo_deslocado": 0.013393924898349677,
+     "R_conjunto": 1.0,
+     "SO_MODIS": 9,
+     "SO_VIIRS": 39,
+     "ambos_esperado_indep": 1.3170731707317074,
+     "celulas_universo": 2296,
+     "comparavel": true,
+     "dia": "2025-07-25",
+     "lift_vs_indep": 25.055555555555554,
+     "motivos_nao_comparavel": "",
+     "n_deteccoes_por_satelite": "{\"Aqua\": 45, \"N20\": 208, \"Terra\": 23}",
+     "ref_mediana_A_MODIS": 42,
+     "ref_mediana_A_VIIRS": 72
+    },
+    {
+     "A_AMBOS": 35,
+     "A_MODIS": 58,
+     "A_UNIAO": 97,
+     "A_VIIRS": 74,
+     "I_MODIS": 1.380952380952381,
+     "I_VIIRS": 1.0277777777777777,
+     "K_jaccard": 0.36082474226804123,
+     "K_nulo_deslocado": 0.033311492858450836,
+     "R_conjunto": 1.2043650793650793,
+     "SO_MODIS": 23,
+     "SO_VIIRS": 39,
+     "ambos_esperado_indep": 1.8693379790940767,
+     "celulas_universo": 2296,
+     "comparavel": true,
+     "dia": "2026-07-21",
+     "lift_vs_indep": 18.723205964585276,
+     "motivos_nao_comparavel": "",
+     "n_deteccoes_por_satelite": "{\"Aqua\": 61, \"N20\": 393, \"Terra\": 58}",
+     "ref_mediana_A_MODIS": 42,
+     "ref_mediana_A_VIIRS": 72
+    },
+    {
+     "A_AMBOS": 8,
+     "A_MODIS": 9,
+     "A_UNIAO": 71,
+     "A_VIIRS": 70,
+     "I_MODIS": null,
+     "I_VIIRS": null,
+     "K_jaccard": 0.11267605633802817,
+     "K_nulo_deslocado": 0.009615384615384616,
+     "R_conjunto": null,
+     "SO_MODIS": 1,
+     "SO_VIIRS": 62,
+     "ambos_esperado_indep": 0.27439024390243905,
+     "celulas_universo": 2296,
+     "comparavel": false,
+     "dia": "2026-07-22",
+     "lift_vs_indep": 29.155555555555555,
+     "motivos_nao_comparavel": "Aqua:VOLUME_BAIXO",
+     "n_deteccoes_por_satelite": "{\"N20\": 363, \"Terra\": 16}",
+     "ref_mediana_A_MODIS": 42,
+     "ref_mediana_A_VIIRS": 72
+    },
+    {
+     "A_AMBOS": 40,
+     "A_MODIS": 73,
+     "A_UNIAO": 112,
+     "A_VIIRS": 79,
+     "I_MODIS": 1.7380952380952381,
+     "I_VIIRS": 1.0972222222222223,
+     "K_jaccard": 0.35714285714285715,
+     "K_nulo_deslocado": 0.044880300341999024,
+     "R_conjunto": 1.4176587301587302,
+     "SO_MODIS": 33,
+     "SO_VIIRS": 39,
+     "ambos_esperado_indep": 2.5117595818815333,
+     "celulas_universo": 2296,
+     "comparavel": true,
+     "dia": "2026-07-23",
+     "lift_vs_indep": 15.925091035200277,
+     "motivos_nao_comparavel": "",
+     "n_deteccoes_por_satelite": "{\"Aqua\": 138, \"N20\": 505, \"Terra\": 83}",
+     "ref_mediana_A_MODIS": 42,
+     "ref_mediana_A_VIIRS": 72
+    },
+    {
+     "A_AMBOS": 12,
+     "A_MODIS": 16,
+     "A_UNIAO": 75,
+     "A_VIIRS": 71,
+     "I_MODIS": 0.38095238095238093,
+     "I_VIIRS": 0.9861111111111112,
+     "K_jaccard": 0.16,
+     "K_nulo_deslocado": 0.03376242095754291,
+     "R_conjunto": 0.683531746031746,
+     "SO_MODIS": 4,
+     "SO_VIIRS": 59,
+     "ambos_esperado_indep": 0.49477351916376305,
+     "celulas_universo": 2296,
+     "comparavel": true,
+     "dia": "2026-07-24",
+     "lift_vs_indep": 24.253521126760564,
+     "motivos_nao_comparavel": "",
+     "n_deteccoes_por_satelite": "{\"Aqua\": 33, \"N20\": 402}",
+     "ref_mediana_A_MODIS": 42,
+     "ref_mediana_A_VIIRS": 72
+    },
+    {
+     "A_AMBOS": 32,
+     "A_MODIS": 52,
+     "A_UNIAO": 86,
+     "A_VIIRS": 66,
+     "I_MODIS": 1.2380952380952381,
+     "I_VIIRS": 0.9166666666666666,
+     "K_jaccard": 0.37209302325581395,
+     "K_nulo_deslocado": 0.056578072624720956,
+     "R_conjunto": 1.0773809523809523,
+     "SO_MODIS": 20,
+     "SO_VIIRS": 34,
+     "ambos_esperado_indep": 1.494773519163763,
+     "celulas_universo": 2296,
+     "comparavel": true,
+     "dia": "2026-07-25",
+     "lift_vs_indep": 21.407925407925408,
+     "motivos_nao_comparavel": "",
+     "n_deteccoes_por_satelite": "{\"Aqua\": 74, \"N20\": 417, \"Terra\": 36}",
+     "ref_mediana_A_MODIS": 42,
+     "ref_mediana_A_VIIRS": 72
+    }
+   ],
+   "estados_por_dia": {
+    "2025-07-21": {
+     "AMBOS": 22,
+     "SO_MODIS": 8,
+     "SO_VIIRS": 53
+    },
+    "2025-07-22": {
+     "AMBOS": 21,
+     "SO_MODIS": 3,
+     "SO_VIIRS": 55
+    },
+    "2025-07-23": {
+     "AMBOS": 24,
+     "SO_MODIS": 25,
+     "SO_VIIRS": 27
+    },
+    "2025-07-24": {
+     "AMBOS": 20,
+     "SO_MODIS": 9,
+     "SO_VIIRS": 42
+    },
+    "2025-07-25": {
+     "AMBOS": 33,
+     "SO_MODIS": 9,
+     "SO_VIIRS": 39
+    },
+    "2026-07-21": {
+     "AMBOS": 35,
+     "SO_MODIS": 23,
+     "SO_VIIRS": 39
+    },
+    "2026-07-22": {
+     "AMBOS": 8,
+     "MODIS_SEM_COMPARACAO": 1,
+     "VIIRS_SEM_COMPARACAO": 62
+    },
+    "2026-07-23": {
+     "AMBOS": 40,
+     "SO_MODIS": 33,
+     "SO_VIIRS": 39
+    },
+    "2026-07-24": {
+     "AMBOS": 12,
+     "SO_MODIS": 4,
+     "SO_VIIRS": 59
+    },
+    "2026-07-25": {
+     "AMBOS": 32,
+     "SO_MODIS": 20,
+     "SO_VIIRS": 34
+    }
+   },
+   "universo": 2296
+  },
+  "0.25": {
+   "celulas_dia_com_deteccao": 611,
+   "concordancia": {
+    "comparaveis": {
+     "A_AMBOS": 212,
+     "A_MODIS": 293,
+     "A_UNIAO": 558,
+     "A_VIIRS": 477,
+     "K_jaccard": 0.37992831541218636,
+     "SO_MODIS": 81,
+     "SO_VIIRS": 265,
+     "dias": 9
+    },
+    "todos": {
+     "A_AMBOS": 219,
+     "A_MODIS": 301,
+     "A_UNIAO": 611,
+     "A_VIIRS": 529,
+     "K_jaccard": 0.35842880523731585,
+     "SO_MODIS": 82,
+     "SO_VIIRS": 310,
+     "dias": 10
+    }
+   },
+   "daily": [
+    {
+     "A_AMBOS": 22,
+     "A_MODIS": 26,
+     "A_UNIAO": 70,
+     "A_VIIRS": 66,
+     "I_MODIS": 0.7647058823529411,
+     "I_VIIRS": 1.2692307692307692,
+     "K_jaccard": 0.3142857142857143,
+     "K_nulo_deslocado": 0.05324882417370015,
+     "R_conjunto": 1.0169683257918551,
+     "SO_MODIS": 4,
+     "SO_VIIRS": 44,
+     "ambos_esperado_indep": 4.5638297872340425,
+     "celulas_universo": 376,
+     "comparavel": true,
+     "dia": "2025-07-21",
+     "lift_vs_indep": 4.82051282051282,
+     "motivos_nao_comparavel": "",
+     "n_deteccoes_por_satelite": "{\"Aqua\": 55, \"N20\": 281, \"Terra\": 13}",
+     "ref_mediana_A_MODIS": 34,
+     "ref_mediana_A_VIIRS": 52
+    },
+    {
+     "A_AMBOS": 22,
+     "A_MODIS": 24,
+     "A_UNIAO": 66,
+     "A_VIIRS": 64,
+     "I_MODIS": 0.7058823529411765,
+     "I_VIIRS": 1.2307692307692308,
+     "K_jaccard": 0.3333333333333333,
+     "K_nulo_deslocado": 0.05759929251891286,
+     "R_conjunto": 0.9683257918552037,
+     "SO_MODIS": 2,
+     "SO_VIIRS": 42,
+     "ambos_esperado_indep": 4.085106382978723,
+     "celulas_universo": 376,
+     "comparavel": true,
+     "dia": "2025-07-22",
+     "lift_vs_indep": 5.385416666666667,
+     "motivos_nao_comparavel": "",
+     "n_deteccoes_por_satelite": "{\"Aqua\": 11, \"N20\": 221, \"Terra\": 36}",
+     "ref_mediana_A_MODIS": 34,
+     "ref_mediana_A_VIIRS": 52
+    },
+    {
+     "A_AMBOS": 25,
+     "A_MODIS": 42,
+     "A_UNIAO": 62,
+     "A_VIIRS": 45,
+     "I_MODIS": 1.2352941176470589,
+     "I_VIIRS": 0.8653846153846154,
+     "K_jaccard": 0.4032258064516129,
+     "K_nulo_deslocado": 0.06336206169214674,
+     "R_conjunto": 1.0503393665158371,
+     "SO_MODIS": 17,
+     "SO_VIIRS": 20,
+     "ambos_esperado_indep": 5.026595744680851,
+     "celulas_universo": 376,
+     "comparavel": true,
+     "dia": "2025-07-23",
+     "lift_vs_indep": 4.973544973544974,
+     "motivos_nao_comparavel": "",
+     "n_deteccoes_por_satelite": "{\"Aqua\": 84, \"N20\": 162, \"Terra\": 7}",
+     "ref_mediana_A_MODIS": 34,
+     "ref_mediana_A_VIIRS": 52
+    },
+    {
+     "A_AMBOS": 17,
+     "A_MODIS": 25,
+     "A_UNIAO": 54,
+     "A_VIIRS": 46,
+     "I_MODIS": 0.7352941176470589,
+     "I_VIIRS": 0.8846153846153846,
+     "K_jaccard": 0.3148148148148148,
+     "K_nulo_deslocado": 0.06923951843032594,
+     "R_conjunto": 0.8099547511312217,
+     "SO_MODIS": 8,
+     "SO_VIIRS": 29,
+     "ambos_esperado_indep": 3.0585106382978724,
+     "celulas_universo": 376,
+     "comparavel": true,
+     "dia": "2025-07-24",
+     "lift_vs_indep": 5.558260869565217,
+     "motivos_nao_comparavel": "",
+     "n_deteccoes_por_satelite": "{\"Aqua\": 10, \"N20\": 213, \"Terra\": 36}",
+     "ref_mediana_A_MODIS": 34,
+     "ref_mediana_A_VIIRS": 52
+    },
+    {
+     "A_AMBOS": 29,
+     "A_MODIS": 34,
+     "A_UNIAO": 61,
+     "A_VIIRS": 56,
+     "I_MODIS": 1.0,
+     "I_VIIRS": 1.0769230769230769,
+     "K_jaccard": 0.47540983606557374,
+     "K_nulo_deslocado": 0.07343869365928189,
+     "R_conjunto": 1.0384615384615383,
+     "SO_MODIS": 5,
+     "SO_VIIRS": 27,
+     "ambos_esperado_indep": 5.0638297872340425,
+     "celulas_universo": 376,
+     "comparavel": true,
+     "dia": "2025-07-25",
+     "lift_vs_indep": 5.726890756302521,
+     "motivos_nao_comparavel": "",
+     "n_deteccoes_por_satelite": "{\"Aqua\": 45, \"N20\": 208, \"Terra\": 23}",
+     "ref_mediana_A_MODIS": 34,
+     "ref_mediana_A_VIIRS": 52
+    },
+    {
+     "A_AMBOS": 29,
+     "A_MODIS": 45,
+     "A_UNIAO": 68,
+     "A_VIIRS": 52,
+     "I_MODIS": 1.3235294117647058,
+     "I_VIIRS": 1.0,
+     "K_jaccard": 0.4264705882352941,
+     "K_nulo_deslocado": 0.0983767576509512,
+     "R_conjunto": 1.1617647058823528,
+     "SO_MODIS": 16,
+     "SO_VIIRS": 23,
+     "ambos_esperado_indep": 6.223404255319149,
+     "celulas_universo": 376,
+     "comparavel": true,
+     "dia": "2026-07-21",
+     "lift_vs_indep": 4.659829059829059,
+     "motivos_nao_comparavel": "",
+     "n_deteccoes_por_satelite": "{\"Aqua\": 61, \"N20\": 393, \"Terra\": 58}",
+     "ref_mediana_A_MODIS": 34,
+     "ref_mediana_A_VIIRS": 52
+    },
+    {
+     "A_AMBOS": 7,
+     "A_MODIS": 8,
+     "A_UNIAO": 53,
+     "A_VIIRS": 52,
+     "I_MODIS": null,
+     "I_VIIRS": null,
+     "K_jaccard": 0.1320754716981132,
+     "K_nulo_deslocado": 0.04512987012987013,
+     "R_conjunto": null,
+     "SO_MODIS": 1,
+     "SO_VIIRS": 45,
+     "ambos_esperado_indep": 1.1063829787234043,
+     "celulas_universo": 376,
+     "comparavel": false,
+     "dia": "2026-07-22",
+     "lift_vs_indep": 6.326923076923077,
+     "motivos_nao_comparavel": "Aqua:VOLUME_BAIXO",
+     "n_deteccoes_por_satelite": "{\"N20\": 363, \"Terra\": 16}",
+     "ref_mediana_A_MODIS": 34,
+     "ref_mediana_A_VIIRS": 52
+    },
+    {
+     "A_AMBOS": 29,
+     "A_MODIS": 47,
+     "A_UNIAO": 74,
+     "A_VIIRS": 56,
+     "I_MODIS": 1.3823529411764706,
+     "I_VIIRS": 1.0769230769230769,
+     "K_jaccard": 0.3918918918918919,
+     "K_nulo_deslocado": 0.1151450311148953,
+     "R_conjunto": 1.2296380090497738,
+     "SO_MODIS": 18,
+     "SO_VIIRS": 27,
+     "ambos_esperado_indep": 7.0,
+     "celulas_universo": 376,
+     "comparavel": true,
+     "dia": "2026-07-23",
+     "lift_vs_indep": 4.142857142857143,
+     "motivos_nao_comparavel": "",
+     "n_deteccoes_por_satelite": "{\"Aqua\": 138, \"N20\": 505, \"Terra\": 83}",
+     "ref_mediana_A_MODIS": 34,
+     "ref_mediana_A_VIIRS": 52
+    },
+    {
+     "A_AMBOS": 9,
+     "A_MODIS": 10,
+     "A_UNIAO": 46,
+     "A_VIIRS": 45,
+     "I_MODIS": 0.29411764705882354,
+     "I_VIIRS": 0.8653846153846154,
+     "K_jaccard": 0.1956521739130435,
+     "K_nulo_deslocado": 0.07647941680960549,
+     "R_conjunto": 0.5797511312217195,
+     "SO_MODIS": 1,
+     "SO_VIIRS": 36,
+     "ambos_esperado_indep": 1.196808510638298,
+     "celulas_universo": 376,
+     "comparavel": true,
+     "dia": "2026-07-24",
+     "lift_vs_indep": 7.52,
+     "motivos_nao_comparavel": "",
+     "n_deteccoes_por_satelite": "{\"Aqua\": 33, \"N20\": 402}",
+     "ref_mediana_A_MODIS": 34,
+     "ref_mediana_A_VIIRS": 52
+    },
+    {
+     "A_AMBOS": 30,
+     "A_MODIS": 40,
+     "A_UNIAO": 57,
+     "A_VIIRS": 47,
+     "I_MODIS": 1.1764705882352942,
+     "I_VIIRS": 0.9038461538461539,
+     "K_jaccard": 0.5263157894736842,
+     "K_nulo_deslocado": 0.12342574931442626,
+     "R_conjunto": 1.040158371040724,
+     "SO_MODIS": 10,
+     "SO_VIIRS": 17,
+     "ambos_esperado_indep": 5.0,
+     "celulas_universo": 376,
+     "comparavel": true,
+     "dia": "2026-07-25",
+     "lift_vs_indep": 6.0,
+     "motivos_nao_comparavel": "",
+     "n_deteccoes_por_satelite": "{\"Aqua\": 74, \"N20\": 417, \"Terra\": 36}",
+     "ref_mediana_A_MODIS": 34,
+     "ref_mediana_A_VIIRS": 52
+    }
+   ],
+   "estados_por_dia": {
+    "2025-07-21": {
+     "AMBOS": 22,
+     "SO_MODIS": 4,
+     "SO_VIIRS": 44
+    },
+    "2025-07-22": {
+     "AMBOS": 22,
+     "SO_MODIS": 2,
+     "SO_VIIRS": 42
+    },
+    "2025-07-23": {
+     "AMBOS": 25,
+     "SO_MODIS": 17,
+     "SO_VIIRS": 20
+    },
+    "2025-07-24": {
+     "AMBOS": 17,
+     "SO_MODIS": 8,
+     "SO_VIIRS": 29
+    },
+    "2025-07-25": {
+     "AMBOS": 29,
+     "SO_MODIS": 5,
+     "SO_VIIRS": 27
+    },
+    "2026-07-21": {
+     "AMBOS": 29,
+     "SO_MODIS": 16,
+     "SO_VIIRS": 23
+    },
+    "2026-07-22": {
+     "AMBOS": 7,
+     "MODIS_SEM_COMPARACAO": 1,
+     "VIIRS_SEM_COMPARACAO": 45
+    },
+    "2026-07-23": {
+     "AMBOS": 29,
+     "SO_MODIS": 18,
+     "SO_VIIRS": 27
+    },
+    "2026-07-24": {
+     "AMBOS": 9,
+     "SO_MODIS": 1,
+     "SO_VIIRS": 36
+    },
+    "2026-07-25": {
+     "AMBOS": 30,
+     "SO_MODIS": 10,
+     "SO_VIIRS": 17
+    }
+   },
+   "universo": 376
+  },
+  "0.5": {
+   "celulas_dia_com_deteccao": 442,
+   "concordancia": {
+    "comparaveis": {
+     "A_AMBOS": 181,
+     "A_MODIS": 229,
+     "A_UNIAO": 407,
+     "A_VIIRS": 359,
+     "K_jaccard": 0.44471744471744473,
+     "SO_MODIS": 48,
+     "SO_VIIRS": 178,
+     "dias": 9
+    },
+    "todos": {
+     "A_AMBOS": 187,
+     "A_MODIS": 236,
+     "A_UNIAO": 442,
+     "A_VIIRS": 393,
+     "K_jaccard": 0.4230769230769231,
+     "SO_MODIS": 49,
+     "SO_VIIRS": 206,
+     "dias": 10
+    }
+   },
+   "daily": [
+    {
+     "A_AMBOS": 17,
+     "A_MODIS": 20,
+     "A_UNIAO": 50,
+     "A_VIIRS": 47,
+     "I_MODIS": 0.7142857142857143,
+     "I_VIIRS": 1.236842105263158,
+     "K_jaccard": 0.34,
+     "K_nulo_deslocado": 0.2510060694022958,
+     "R_conjunto": 0.9755639097744362,
+     "SO_MODIS": 3,
+     "SO_VIIRS": 30,
+     "ambos_esperado_indep": 8.785046728971963,
+     "celulas_universo": 107,
+     "comparavel": true,
+     "dia": "2025-07-21",
+     "lift_vs_indep": 1.9351063829787234,
+     "motivos_nao_comparavel": "",
+     "n_deteccoes_por_satelite": "{\"Aqua\": 55, \"N20\": 281, \"Terra\": 13}",
+     "ref_mediana_A_MODIS": 28,
+     "ref_mediana_A_VIIRS": 38
+    },
+    {
+     "A_AMBOS": 23,
+     "A_MODIS": 24,
+     "A_UNIAO": 49,
+     "A_VIIRS": 48,
+     "I_MODIS": 0.8571428571428571,
+     "I_VIIRS": 1.263157894736842,
+     "K_jaccard": 0.46938775510204084,
+     "K_nulo_deslocado": 0.27268819143819145,
+     "R_conjunto": 1.0601503759398496,
+     "SO_MODIS": 1,
+     "SO_VIIRS": 25,
+     "ambos_esperado_indep": 10.766355140186915,
+     "celulas_universo": 107,
+     "comparavel": true,
+     "dia": "2025-07-22",
+     "lift_vs_indep": 2.1362847222222223,
+     "motivos_nao_comparavel": "",
+     "n_deteccoes_por_satelite": "{\"Aqua\": 11, \"N20\": 221, \"Terra\": 36}",
+     "ref_mediana_A_MODIS": 28,
+     "ref_mediana_A_VIIRS": 38
+    },
+    {
+     "A_AMBOS": 22,
+     "A_MODIS": 31,
+     "A_UNIAO": 44,
+     "A_VIIRS": 35,
+     "I_MODIS": 1.1071428571428572,
+     "I_VIIRS": 0.9210526315789473,
+     "K_jaccard": 0.5,
+     "K_nulo_deslocado": 0.3008229497249634,
+     "R_conjunto": 1.0140977443609023,
+     "SO_MODIS": 9,
+     "SO_VIIRS": 13,
+     "ambos_esperado_indep": 10.14018691588785,
+     "celulas_universo": 107,
+     "comparavel": true,
+     "dia": "2025-07-23",
+     "lift_vs_indep": 2.169585253456221,
+     "motivos_nao_comparavel": "",
+     "n_deteccoes_por_satelite": "{\"Aqua\": 84, \"N20\": 162, \"Terra\": 7}",
+     "ref_mediana_A_MODIS": 28,
+     "ref_mediana_A_VIIRS": 38
+    },
+    {
+     "A_AMBOS": 15,
+     "A_MODIS": 21,
+     "A_UNIAO": 44,
+     "A_VIIRS": 38,
+     "I_MODIS": 0.75,
+     "I_VIIRS": 1.0,
+     "K_jaccard": 0.3409090909090909,
+     "K_nulo_deslocado": 0.24188405797101448,
+     "R_conjunto": 0.875,
+     "SO_MODIS": 6,
+     "SO_VIIRS": 23,
+     "ambos_esperado_indep": 7.457943925233645,
+     "celulas_universo": 107,
+     "comparavel": true,
+     "dia": "2025-07-24",
+     "lift_vs_indep": 2.011278195488722,
+     "motivos_nao_comparavel": "",
+     "n_deteccoes_por_satelite": "{\"Aqua\": 10, \"N20\": 213, \"Terra\": 36}",
+     "ref_mediana_A_MODIS": 28,
+     "ref_mediana_A_VIIRS": 38
+    },
+    {
+     "A_AMBOS": 27,
+     "A_MODIS": 30,
+     "A_UNIAO": 49,
+     "A_VIIRS": 46,
+     "I_MODIS": 1.0714285714285714,
+     "I_VIIRS": 1.2105263157894737,
+     "K_jaccard": 0.5510204081632653,
+     "K_nulo_deslocado": 0.3645215985489245,
+     "R_conjunto": 1.1409774436090225,
+     "SO_MODIS": 3,
+     "SO_VIIRS": 19,
+     "ambos_esperado_indep": 12.897196261682243,
+     "celulas_universo": 107,
+     "comparavel": true,
+     "dia": "2025-07-25",
+     "lift_vs_indep": 2.0934782608695652,
+     "motivos_nao_comparavel": "",
+     "n_deteccoes_por_satelite": "{\"Aqua\": 45, \"N20\": 208, \"Terra\": 23}",
+     "ref_mediana_A_MODIS": 28,
+     "ref_mediana_A_VIIRS": 38
+    },
+    {
+     "A_AMBOS": 25,
+     "A_MODIS": 34,
+     "A_UNIAO": 47,
+     "A_VIIRS": 38,
+     "I_MODIS": 1.2142857142857142,
+     "I_VIIRS": 1.0,
+     "K_jaccard": 0.5319148936170213,
+     "K_nulo_deslocado": 0.33264652014652013,
+     "R_conjunto": 1.1071428571428572,
+     "SO_MODIS": 9,
+     "SO_VIIRS": 13,
+     "ambos_esperado_indep": 12.074766355140186,
+     "celulas_universo": 107,
+     "comparavel": true,
+     "dia": "2026-07-21",
+     "lift_vs_indep": 2.070433436532508,
+     "motivos_nao_comparavel": "",
+     "n_deteccoes_por_satelite": "{\"Aqua\": 61, \"N20\": 393, \"Terra\": 58}",
+     "ref_mediana_A_MODIS": 28,
+     "ref_mediana_A_VIIRS": 38
+    },
+    {
+     "A_AMBOS": 6,
+     "A_MODIS": 7,
+     "A_UNIAO": 35,
+     "A_VIIRS": 34,
+     "I_MODIS": null,
+     "I_VIIRS": null,
+     "K_jaccard": 0.17142857142857143,
+     "K_nulo_deslocado": 0.13351393188854488,
+     "R_conjunto": null,
+     "SO_MODIS": 1,
+     "SO_VIIRS": 28,
+     "ambos_esperado_indep": 2.2242990654205608,
+     "celulas_universo": 107,
+     "comparavel": false,
+     "dia": "2026-07-22",
+     "lift_vs_indep": 2.697478991596639,
+     "motivos_nao_comparavel": "Aqua:VOLUME_BAIXO",
+     "n_deteccoes_por_satelite": "{\"N20\": 363, \"Terra\": 16}",
+     "ref_mediana_A_MODIS": 28,
+     "ref_mediana_A_VIIRS": 38
+    },
+    {
+     "A_AMBOS": 24,
+     "A_MODIS": 35,
+     "A_UNIAO": 51,
+     "A_VIIRS": 40,
+     "I_MODIS": 1.25,
+     "I_VIIRS": 1.0526315789473684,
+     "K_jaccard": 0.47058823529411764,
+     "K_nulo_deslocado": 0.34956312127922295,
+     "R_conjunto": 1.151315789473684,
+     "SO_MODIS": 11,
+     "SO_VIIRS": 16,
+     "ambos_esperado_indep": 13.08411214953271,
+     "celulas_universo": 107,
+     "comparavel": true,
+     "dia": "2026-07-23",
+     "lift_vs_indep": 1.8342857142857143,
+     "motivos_nao_comparavel": "",
+     "n_deteccoes_por_satelite": "{\"Aqua\": 138, \"N20\": 505, \"Terra\": 83}",
+     "ref_mediana_A_MODIS": 28,
+     "ref_mediana_A_VIIRS": 38
+    },
+    {
+     "A_AMBOS": 5,
+     "A_MODIS": 6,
+     "A_UNIAO": 36,
+     "A_VIIRS": 35,
+     "I_MODIS": 0.21428571428571427,
+     "I_VIIRS": 0.9210526315789473,
+     "K_jaccard": 0.1388888888888889,
+     "K_nulo_deslocado": 0.12443340972752737,
+     "R_conjunto": 0.5676691729323308,
+     "SO_MODIS": 1,
+     "SO_VIIRS": 30,
+     "ambos_esperado_indep": 1.9626168224299065,
+     "celulas_universo": 107,
+     "comparavel": true,
+     "dia": "2026-07-24",
+     "lift_vs_indep": 2.5476190476190474,
+     "motivos_nao_comparavel": "",
+     "n_deteccoes_por_satelite": "{\"Aqua\": 33, \"N20\": 402}",
+     "ref_mediana_A_MODIS": 28,
+     "ref_mediana_A_VIIRS": 38
+    },
+    {
+     "A_AMBOS": 23,
+     "A_MODIS": 28,
+     "A_UNIAO": 37,
+     "A_VIIRS": 32,
+     "I_MODIS": 1.0,
+     "I_VIIRS": 0.8421052631578947,
+     "K_jaccard": 0.6216216216216216,
+     "K_nulo_deslocado": 0.367292990697246,
+     "R_conjunto": 0.9210526315789473,
+     "SO_MODIS": 5,
+     "SO_VIIRS": 9,
+     "ambos_esperado_indep": 8.373831775700934,
+     "celulas_universo": 107,
+     "comparavel": true,
+     "dia": "2026-07-25",
+     "lift_vs_indep": 2.746651785714286,
+     "motivos_nao_comparavel": "",
+     "n_deteccoes_por_satelite": "{\"Aqua\": 74, \"N20\": 417, \"Terra\": 36}",
+     "ref_mediana_A_MODIS": 28,
+     "ref_mediana_A_VIIRS": 38
+    }
+   ],
+   "estados_por_dia": {
+    "2025-07-21": {
+     "AMBOS": 17,
+     "SO_MODIS": 3,
+     "SO_VIIRS": 30
+    },
+    "2025-07-22": {
+     "AMBOS": 23,
+     "SO_MODIS": 1,
+     "SO_VIIRS": 25
+    },
+    "2025-07-23": {
+     "AMBOS": 22,
+     "SO_MODIS": 9,
+     "SO_VIIRS": 13
+    },
+    "2025-07-24": {
+     "AMBOS": 15,
+     "SO_MODIS": 6,
+     "SO_VIIRS": 23
+    },
+    "2025-07-25": {
+     "AMBOS": 27,
+     "SO_MODIS": 3,
+     "SO_VIIRS": 19
+    },
+    "2026-07-21": {
+     "AMBOS": 25,
+     "SO_MODIS": 9,
+     "SO_VIIRS": 13
+    },
+    "2026-07-22": {
+     "AMBOS": 6,
+     "MODIS_SEM_COMPARACAO": 1,
+     "VIIRS_SEM_COMPARACAO": 28
+    },
+    "2026-07-23": {
+     "AMBOS": 24,
+     "SO_MODIS": 11,
+     "SO_VIIRS": 16
+    },
+    "2026-07-24": {
+     "AMBOS": 5,
+     "SO_MODIS": 1,
+     "SO_VIIRS": 30
+    },
+    "2026-07-25": {
+     "AMBOS": 23,
+     "SO_MODIS": 5,
+     "SO_VIIRS": 9
+    }
+   },
+   "universo": 107
+  }
+ },
+ "comparabilidade": {
+  "2025-07-21": {
+   "comparavel": true,
+   "motivos": []
+  },
+  "2025-07-22": {
+   "comparavel": true,
+   "motivos": []
+  },
+  "2025-07-23": {
+   "comparavel": true,
+   "motivos": []
+  },
+  "2025-07-24": {
+   "comparavel": true,
+   "motivos": []
+  },
+  "2025-07-25": {
+   "comparavel": true,
+   "motivos": []
+  },
+  "2026-07-21": {
+   "comparavel": true,
+   "motivos": []
+  },
+  "2026-07-22": {
+   "comparavel": false,
+   "motivos": [
+    "Aqua:VOLUME_BAIXO"
+   ]
+  },
+  "2026-07-23": {
+   "comparavel": true,
+   "motivos": []
+  },
+  "2026-07-24": {
+   "comparavel": true,
+   "motivos": []
+  },
+  "2026-07-25": {
+   "comparavel": true,
+   "motivos": []
+  }
+ },
+ "correspondencia": {
+  "janela_min": [
+   60,
+   150
+  ],
+  "modis": "Aqua",
+  "parametros_nao_validados": true,
+  "por_raio": {
+   "1000": {
+    "2025": {
+     "controle_deslocado_media_modis_com_candidato": 0.5,
+     "fracao_modis_com_candidato": 0.33170731707317075,
+     "modis_com_candidato_por_dia": {
+      "2025-07-21": 32,
+      "2025-07-22": 2,
+      "2025-07-23": 30,
+      "2025-07-24": 4,
+      "2025-07-25": 0
+     },
+     "modis_por_dia": {
+      "2025-07-21": 55,
+      "2025-07-22": 11,
+      "2025-07-23": 84,
+      "2025-07-24": 10,
+      "2025-07-25": 45
+     },
+     "n_modis": 205,
+     "n_modis_com_candidato": 68,
+     "n_pares_candidatos": 189,
+     "relacoes": {
+      "1:1": 16,
+      "1:N": 17,
+      "M:N": 13,
+      "N:1": 1
+     },
+     "rotulo": "CANDIDATA"
+    },
+    "2026": {
+     "controle_deslocado_media_modis_com_candidato": 3.25,
+     "fracao_modis_com_candidato": 0.29411764705882354,
+     "modis_com_candidato_por_dia": {
+      "2026-07-21": 0,
+      "2026-07-22": 0,
+      "2026-07-23": 56,
+      "2026-07-24": 0,
+      "2026-07-25": 34
+     },
+     "modis_por_dia": {
+      "2026-07-21": 61,
+      "2026-07-23": 138,
+      "2026-07-24": 33,
+      "2026-07-25": 74
+     },
+     "n_modis": 306,
+     "n_modis_com_candidato": 90,
+     "n_pares_candidatos": 351,
+     "relacoes": {
+      "1:1": 14,
+      "1:N": 26,
+      "M:N": 16,
+      "N:1": 2
+     },
+     "rotulo": "CANDIDATA"
+    }
+   },
+   "3000": {
+    "2025": {
+     "controle_deslocado_media_modis_com_candidato": 0.75,
+     "fracao_modis_com_candidato": 0.5073170731707317,
+     "n_modis": 205,
+     "n_modis_com_candidato": 104,
+     "n_pares_candidatos": 581,
+     "relacoes": {
+      "1:1": 5,
+      "1:N": 17,
+      "M:N": 19,
+      "N:1": 5
+     },
+     "rotulo": "CANDIDATA"
+    },
+    "2026": {
+     "controle_deslocado_media_modis_com_candidato": 11.75,
+     "fracao_modis_com_candidato": 0.42483660130718953,
+     "n_modis": 306,
+     "n_modis_com_candidato": 130,
+     "n_pares_candidatos": 1542,
+     "relacoes": {
+      "1:1": 4,
+      "1:N": 15,
+      "M:N": 28,
+      "N:1": 3
+     },
+     "rotulo": "CANDIDATA"
+    }
+   },
+   "500": {
+    "2025": {
+     "controle_deslocado_media_modis_com_candidato": 0.0,
+     "fracao_modis_com_candidato": 0.15121951219512195,
+     "n_modis": 205,
+     "n_modis_com_candidato": 31,
+     "n_pares_candidatos": 53,
+     "relacoes": {
+      "1:1": 15,
+      "1:N": 12,
+      "M:N": 2,
+      "N:1": 0
+     },
+     "rotulo": "CANDIDATA"
+    },
+    "2026": {
+     "controle_deslocado_media_modis_com_candidato": 1.5,
+     "fracao_modis_com_candidato": 0.17320261437908496,
+     "n_modis": 306,
+     "n_modis_com_candidato": 53,
+     "n_pares_candidatos": 107,
+     "relacoes": {
+      "1:1": 23,
+      "1:N": 30,
+      "M:N": 0,
+      "N:1": 0
+     },
+     "rotulo": "CANDIDATA"
+    }
+   }
+  },
+  "viirs": "N20"
+ },
+ "integridade": {
+  "arquivos": [
+   {
+    "arquivo": "NASA_FIRMS/lot3/MODIS_SP/20250721/baa5ac1cffbb4902a2d1c697968bd981.csv",
+    "linhas": 6890,
+    "produto": "MODIS_SP",
+    "sha256": "463110a06a88beb6fbc8e802b9614b54c9770925376397e626709d80cd9e9fc0"
+   },
+   {
+    "arquivo": "NASA_FIRMS/lot3/MODIS_SP/20260721/4343bbca678d4c29b111e9c4fac6a8fc.csv",
+    "linhas": 2600,
+    "produto": "MODIS_SP",
+    "sha256": "4d75e290ed45db25f51b74bd6f932f001369f0fa769a5b1b6f8fe2ff4a198553"
+   },
+   {
+    "arquivo": "NASA_FIRMS/lot2/VIIRS_NOAA20_SP/20250721/d365b6a9a66d4f3ebaaf578e663ddcf9.csv",
+    "linhas": 21827,
+    "produto": "VIIRS_NOAA20_SP",
+    "sha256": "7a120b74842ea41c2c1c7f39e61b4b5de9fadb4a7cbfe6e99c8fe7329c857cf9"
+   },
+   {
+    "arquivo": "NASA_FIRMS/raw_stageB/VIIRS_NOAA20_SP/20260721/292f9b7cd86d4d948f3cc99fee031ed7.csv",
+    "linhas": 11255,
+    "produto": "VIIRS_NOAA20_SP",
+    "sha256": "ca5954d9bc62f1f87d83b36ba4ceba40c561fb2598aab149983b40627387670b"
+   },
+   {
+    "arquivo": "NASA_FIRMS/raw_stageB/VIIRS_NOAA20_SP/20260721/e22d3f8ad4fe45afb712978a0df0af7a.csv",
+    "linhas": 11255,
+    "produto": "VIIRS_NOAA20_SP",
+    "sha256": "ca5954d9bc62f1f87d83b36ba4ceba40c561fb2598aab149983b40627387670b"
+   }
+  ],
+  "chaves_duplicadas_apos_dedup": 0,
+  "duplicatas_removidas": 11255,
+  "registros_brutos": 53827,
+  "registros_unicos_no_periodo": 42572
+ },
+ "status_sensor_dia": {
+  "Aqua|2025-07-21": "OK",
+  "Aqua|2025-07-22": "OK",
+  "Aqua|2025-07-23": "OK",
+  "Aqua|2025-07-24": "OK",
+  "Aqua|2025-07-25": "OK",
+  "Aqua|2026-07-21": "OK",
+  "Aqua|2026-07-22": "VOLUME_BAIXO",
+  "Aqua|2026-07-23": "OK",
+  "Aqua|2026-07-24": "OK",
+  "Aqua|2026-07-25": "OK",
+  "N20|2025-07-21": "OK",
+  "N20|2025-07-22": "OK",
+  "N20|2025-07-23": "OK",
+  "N20|2025-07-24": "OK",
+  "N20|2025-07-25": "OK",
+  "N20|2026-07-21": "OK",
+  "N20|2026-07-22": "OK",
+  "N20|2026-07-23": "OK",
+  "N20|2026-07-24": "OK",
+  "N20|2026-07-25": "OK",
+  "Terra|2025-07-21": "OK",
+  "Terra|2025-07-22": "OK",
+  "Terra|2025-07-23": "OK",
+  "Terra|2025-07-24": "OK",
+  "Terra|2025-07-25": "OK",
+  "Terra|2026-07-21": "OK",
+  "Terra|2026-07-22": "OK",
+  "Terra|2026-07-23": "OK",
+  "Terra|2026-07-24": "OK",
+  "Terra|2026-07-25": "OK"
+ },
+ "utilidade": {
+  "K_dias_nao_comparaveis": {
+   "2026-07-22": 0.1320754716981132
+  },
+  "K_media_dias_comparaveis": 0.37571110538499586,
+  "K_menos_nulo_por_dia": {
+   "2025-07-21": 0.26103689011201414,
+   "2025-07-22": 0.27573404081442043,
+   "2025-07-23": 0.3398637447594661,
+   "2025-07-24": 0.24557529638448888,
+   "2025-07-25": 0.40197114240629184,
+   "2026-07-21": 0.3280938305843429,
+   "2026-07-22": 0.08694560156824307,
+   "2026-07-23": 0.2767468607769966,
+   "2026-07-24": 0.119172757103438,
+   "2026-07-25": 0.4028900401592579
+  },
+  "K_minimo_maximo": [
+   0.1320754716981132,
+   0.5263157894736842
+  ],
+  "calendario_contagem_vs_presenca_por_ano": {
+   "2025": {
+    "mediana_celulas_MODIS": 26,
+    "mediana_celulas_UNIAO": 62,
+    "mediana_celulas_VIIRS": 56,
+    "mediana_contagem_MODIS": 68,
+    "mediana_contagem_VIIRS": 213,
+    "mediana_deteccoes_por_celula_ativa_MODIS": 2.0,
+    "mediana_deteccoes_por_celula_ativa_VIIRS": 3.7142857142857144
+   },
+   "2026": {
+    "mediana_celulas_MODIS": 42.5,
+    "mediana_celulas_UNIAO": 62.5,
+    "mediana_celulas_VIIRS": 49.5,
+    "mediana_contagem_MODIS": 114.5,
+    "mediana_contagem_VIIRS": 409.5,
+    "mediana_deteccoes_por_celula_ativa_MODIS": 3.025,
+    "mediana_deteccoes_por_celula_ativa_VIIRS": 8.902836879432623
+   }
+  },
+  "contagem_MODIS_por_dia": {
+   "2025-07-21": 68,
+   "2025-07-22": 47,
+   "2025-07-23": 91,
+   "2025-07-24": 46,
+   "2025-07-25": 68,
+   "2026-07-21": 119,
+   "2026-07-22": 16,
+   "2026-07-23": 221,
+   "2026-07-24": 33,
+   "2026-07-25": 110
+  },
+  "contagem_VIIRS_por_dia": {
+   "2025-07-21": 281,
+   "2025-07-22": 221,
+   "2025-07-23": 162,
+   "2025-07-24": 213,
+   "2025-07-25": 208,
+   "2026-07-21": 393,
+   "2026-07-22": 363,
+   "2026-07-23": 505,
+   "2026-07-24": 402,
+   "2026-07-25": 417
+  },
+  "cv_I_MODIS": 0.37498034287842974,
+  "cv_I_VIIRS": 0.1524103247302218,
+  "cv_R_conjunto": 0.19505275129189198,
+  "dias_nao_comparaveis": {
+   "2026-07-22": "Aqua:VOLUME_BAIXO"
+  },
+  "indice_MODIS_ingenuo_dias_nao_comparaveis": {
+   "2026-07-22": 0.23529411764705882
+  },
+  "mediana_por_ano_dias_comparaveis": {
+   "2025": {
+    "A_AMBOS": 22,
+    "A_MODIS": 26,
+    "A_UNIAO": 62,
+    "A_VIIRS": 56,
+    "K_jaccard": 0.3333333333333333,
+    "dias": 5
+   },
+   "2026": {
+    "A_AMBOS": 29.0,
+    "A_MODIS": 42.5,
+    "A_UNIAO": 62.5,
+    "A_VIIRS": 49.5,
+    "K_jaccard": 0.409181240063593,
+    "dias": 4
+   }
+  },
+  "n_dias": 10,
+  "n_dias_comparaveis": 9,
+  "sensibilidade_min_ratio_satdias_sinalizados": {
+   "0.1": [
+    "Aqua|2026-07-22:VOLUME_BAIXO"
+   ],
+   "0.25": [
+    "Aqua|2026-07-22:VOLUME_BAIXO"
+   ],
+   "0.4": [
+    "Aqua|2026-07-22:VOLUME_BAIXO",
+    "Terra|2026-07-24:VOLUME_BAIXO"
+   ],
+   "0.5": [
+    "Aqua|2026-07-22:VOLUME_BAIXO",
+    "Terra|2026-07-24:VOLUME_BAIXO"
+   ],
+   "0.6": [
+    "Aqua|2026-07-22:VOLUME_BAIXO",
+    "Terra|2025-07-21:VOLUME_BAIXO",
+    "Terra|2026-07-22:VOLUME_BAIXO",
+    "Terra|2026-07-24:VOLUME_BAIXO"
+   ]
+  },
+  "spearman_A_MODIS_A_VIIRS_todos_os_dias": 0.05504818825631803,
+  "spearman_I_MODIS_I_VIIRS_comparaveis": 0.050421948408961074,
+  "spearman_K_A_MODIS": 0.7333333333333333,
+  "spearman_K_A_UNIAO": 0.3212121212121212,
+  "spearman_K_A_VIIRS": 0.0,
+  "spearman_R_A_UNIAO": 0.6666666666666666,
+  "spearman_R_I_MODIS": 0.9833333333333333,
+  "spearman_R_I_VIIRS": 0.13445852909056286,
+  "spearman_contagem_vs_presenca_MODIS": 0.9726488698881033,
+  "spearman_contagem_vs_presenca_VIIRS": 0.0428152575326918
+ }
+}

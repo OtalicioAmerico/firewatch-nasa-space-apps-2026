@@ -1,0 +1,689 @@
+{
+  "app": {
+    "title": "Firewatch · MODIS and VIIRS thermal activity",
+    "skip": "Skip to content"
+  },
+  "brand": {
+    "name": "Ikarus Aurora",
+    "tagline": "NASA WEB APPS CHALLENGE",
+    "product": "FIREWATCH",
+    "project": "Harmonization of MODIS and VIIRS Hot Spots"
+  },
+  "lang": {
+    "label": "Language",
+    "pt-BR": "Português (Brasil)",
+    "en-US": "English (US)"
+  },
+  "mode": {
+    "MOCK": {
+      "label": "DEMO MODE · SIMULATED DATA",
+      "note": "All numbers, cells, detections, coverage states and references in this mode are simulated (seeded random generator). Only the region boundaries are real."
+    },
+    "REAL": {
+      "label": "EXPERIMENTAL ANALYSIS · NASA DATA",
+      "note": "Experimental, not validated analysis of NASA FIRMS thermal detections (MODIS and VIIRS NOAA-20), Tocantins 2021–2025. A detection is not a confirmed fire."
+    }
+  },
+  "common": {
+    "na": "N/A",
+    "notApplicable": "not applicable",
+    "yes": "Yes",
+    "no": "No",
+    "retry": "Try again",
+    "moreInfo": "More information",
+    "comparable": "Comparable",
+    "notComparable": "Not comparable",
+    "experimental": "Experimental",
+    "previousDay": "Previous day",
+    "nextDay": "Next day",
+    "detShort": "{n} det.",
+    "minutes": "{n} min"
+  },
+  "data": {
+    "loading": "Loading data…",
+    "unavailable": {
+      "title": "Data not available",
+      "body": "The processed results could not be loaded and no substitute data is shown. Run the exporter (tools/export_web) and reload."
+    }
+  },
+  "nav": {
+    "primary": "Primary",
+    "main": "Main navigation",
+    "open": "Open navigation",
+    "overview": "Overview",
+    "calendar": "Historical calendar",
+    "spatial": "Spatial explorer",
+    "methodology": "Methodology",
+    "shortcuts": "Shortcuts",
+    "compareOnMap": "Compare sensors on the map"
+  },
+  "region": {
+    "country": { "BR": "Brazil" }
+  },
+  "side": {
+    "cells": "Cells",
+    "period": "Period",
+    "coverageRule": "Coverage rule"
+  },
+  "scenario": {
+    "label": "Coverage scenario",
+    "labelSidebar": "Coverage scenario (sidebar)",
+    "about": "About coverage scenarios",
+    "A": {
+      "full": "A · Conservative",
+      "short": "conservative",
+      "tip": "uses only cells whose coverage is corroborated and excludes inconclusive cases."
+    },
+    "B": {
+      "full": "B · Exploratory",
+      "short": "exploratory",
+      "tip": "uses every observation and flags the uncertainty."
+    }
+  },
+  "theme": {
+    "toggle": "Toggle theme",
+    "toDark": "Switch to dark theme",
+    "toLight": "Switch to light theme"
+  },
+  "sensor": {
+    "both": "Both",
+    "compare": "Compare"
+  },
+  "legend": {
+    "aria": "Cell category legend",
+    "border": "Border cell (part of it lies outside Tocantins)"
+  },
+  "category": {
+    "BOTH": { "label": "Both sensors recorded activity", "short": "Both" },
+    "MODIS_ONLY": { "label": "MODIS only", "short": "MODIS only" },
+    "VIIRS_ONLY": { "label": "VIIRS only", "short": "VIIRS only" },
+    "UNCERTAIN": { "label": "Coverage uncertain", "short": "Uncertain" },
+    "NONE": { "label": "No detection recorded", "short": "None" }
+  },
+  "coverage": {
+    "CORROBORATED": {
+      "label": "Coverage corroborated",
+      "tip": "At least 95 % of the area is inside a satellite granule, the granule catalogue is complete for the day and no FIRMS × catalogue conflict exists. It does not mean clear sky."
+    },
+    "PARTIAL": {
+      "label": "Partial coverage",
+      "tip": "Only part of the area was inside a granule. Absence of detections elsewhere says nothing."
+    },
+    "INDETERMINATE": {
+      "label": "Coverage indeterminate",
+      "tip": "The granule catalogue is incomplete or conflicts with FIRMS records. Coverage cannot be asserted, so “no detection” is not interpreted."
+    },
+    "NO_COVERAGE_CORROBORATED": {
+      "label": "Not covered (catalogue complete)",
+      "tip": "The catalogue is complete and no granule covers the area. This is not the same as “no fire”."
+    }
+  },
+  "ref": {
+    "ABOVE": { "short": "Above available reference", "label": "Recorded activity above the available reference" },
+    "WITHIN": { "short": "Within available reference", "label": "Within the range of the available reference" },
+    "BELOW": { "short": "Below available reference", "label": "Recorded activity below the available reference" },
+    "INSUFFICIENT": { "short": "Insufficient reference", "label": "Insufficient reference (fewer than 2 comparison years)" },
+    "NO_DATA": { "short": "No data", "label": "Not enough valid days in the week" },
+    "basis": {
+      "BLOCK_A": "Other years of the MODIS version block 6.03 (2021–2022).",
+      "BLOCK_B": "Other years of the MODIS version block 61.03 (2023–2025).",
+      "OTHER_YEARS": "All other available years.",
+      "NONE": ""
+    }
+  },
+  "metric": {
+    "extent": {
+      "label": "Spatial extent",
+      "help": "Share of the observed area (cells) with at least one recorded thermal detection. Numerator and denominator are shown in the day details. It is not burned area."
+    },
+    "intensity": {
+      "label": "Detection intensity",
+      "help": "Detections per active cell: how concentrated the recorded detections are."
+    },
+    "detections": {
+      "label": "Raw detections",
+      "help": "Raw detection count of each sensor. Counts of MODIS and VIIRS are never added or treated as equivalent, and a count is not a number of fires."
+    },
+    "concordance": {
+      "label": "Spatial agreement (K)",
+      "help": "Spatial agreement (Jaccard K) between the cells active in MODIS and VIIRS, computed only where both could be observed. Not applicable when coverage is not comparable."
+    }
+  },
+  "comparison": {
+    "reason": {
+      "INSUFFICIENT_COVERAGE": "Comparable coverage below 80 % of the region",
+      "NO_ACTIVE_CELLS": "No active cells in either sensor"
+    }
+  },
+  "flags": {
+    "PEAK_BOTH_COVERED": "Peak-season day with both sensors well covered",
+    "N20_INCOMPLETE": "NOAA-20 catalogue incomplete (coverage cannot be asserted)",
+    "TERRA_CONFLICT": "Terra detections without matching granules (FIRMS × CMR conflict)",
+    "AQUA_PARTIAL": "Aqua covers only part of the region",
+    "TERRA_PARTIAL": "Terra covers only part of the region",
+    "MODIS_BOTH_PARTIAL": "Both MODIS satellites partially covered",
+    "TERRA_INCOMPLETE": "Terra catalogue incomplete (coverage cannot be asserted)",
+    "AQUA_INCOMPLETE": "Aqua catalogue incomplete (coverage cannot be asserted)",
+    "AQUA_CONFLICT": "Aqua detections without matching granules (FIRMS × CMR conflict)",
+    "N20_CONFLICT": "NOAA-20 detections without matching granules (FIRMS × CMR conflict)",
+    "N20_PARTIAL": "NOAA-20 covers only part of the region"
+  },
+  "calendar": {
+    "aria": "Historical calendar",
+    "year": "Year",
+    "prevMonth": "Previous month",
+    "nextMonth": "Next month",
+    "sensorFilter": "Sensor filter",
+    "indicator": "Indicator",
+    "aboutIndicator": "About this indicator",
+    "glance": "{year} at a glance",
+    "groupAria": {
+      "MOCK": "{month} (simulated data)",
+      "REAL": "{month} (NASA FIRMS data, experimental)"
+    },
+    "cell": {
+      "kNa": "K not applicable ({reason})",
+      "cov": {
+        "PARTIAL": "partial coverage",
+        "INDETERMINATE": "coverage indeterminate",
+        "NO_COVERAGE_CORROBORATED": "not covered"
+      }
+    },
+    "legend": {
+      "aria": "Calendar legend",
+      "modis": "MODIS: more recorded activity",
+      "viirs": "VIIRS: more recorded activity",
+      "k": "K: more spatial agreement",
+      "partial": "Partial coverage",
+      "indeterminate": "Coverage indeterminate",
+      "excluded": "Excluded (scenario A) / not comparable"
+    },
+    "keysHint": {
+      "MOCK": "Arrow keys move between days. Colours are scaled to the whole simulated series.",
+      "REAL": "Arrow keys move between days. Colours are scaled to the whole 2021–2025 series."
+    }
+  },
+  "day": {
+    "selected": { "MOCK": "Selected day · simulated", "REAL": "Selected day · UTC day of the data" },
+    "openOnMap": "Open on map",
+    "notesAria": "Day notes",
+    "sensorAria": "{sensor} indicators",
+    "satellitesAria": "{sensor} satellites",
+    "comparisonAria": "Sensor comparison",
+    "refAria": "Historical reference",
+    "version": "version {version}",
+    "versionBlock": "version {version} · block {years}",
+    "excludedA": {
+      "title": "Excluded in scenario A.",
+      "body": "Corroborated coverage is below 50 % of the region, so extent and intensity are not computed. {n} detections remain visible in scenario B."
+    },
+    "extentTip": "Active cells ÷ observed cells (numerator and denominator are shown). Not burned area.",
+    "intensityTip": "Detections per active cell.",
+    "detectionsTip": "Raw count of this sensor only. Never added to the other sensor.",
+    "cellsOf": "{a} of {b} cells",
+    "cellsOfFull": "{a} of {b} cells",
+    "coverageNote": "The coverage badge is a presentation summary of the per-cell coverage states computed by the engine; the percentage and any FIRMS × CMR conflict are shown per satellite. Absence of detections is never read as absence of fire.",
+    "perActiveCell": "det. / active cell",
+    "thisSensorOnly": "this sensor only",
+    "excludedByA": "{n} excluded by scenario A",
+    "covered": "{v} covered",
+    "unknownCells_one": "{n} cell has indeterminate coverage and no detection: nothing can be said about it.",
+    "unknownCells_other": "{n} cells have indeterminate coverage and no detection: nothing can be said about them.",
+    "refYears_one": "{n} reference year",
+    "refYears_other": "{n} reference years",
+    "week": "block {w}",
+    "divergence": {
+      "title": "Count vs extent.",
+      "COUNT_HIGHER_THAN_EXTENT": "{sensor}: the raw detection count ranks much higher in the year than the spatial extent — detections are concentrated in fewer cells.",
+      "EXTENT_HIGHER_THAN_COUNT": "{sensor}: the spatial extent ranks higher than the raw detection count — activity is spread over more cells with fewer detections each."
+    },
+    "agreement": {
+      "title": "Spatial agreement between sensors",
+      "tip": "Jaccard K = cells active in both ÷ cells active in either, computed only on cells that both sensors could observe. It measures agreement of cells, not identity of fires."
+    },
+    "kNa": {
+      "title": "K not applicable.",
+      "notComputed": "Not computed.",
+      "body": "The interface never shows a comparison number when coverage does not allow one."
+    },
+    "chance": "chance level ≈ {v}",
+    "modisConfirmed": "MODIS cells also seen by VIIRS",
+    "passOffset": "Pass offset",
+    "passOffsetSub": { "MOCK": "Aqua − NOAA-20 (simulated)", "REAL": "Aqua − NOAA-20 (median detection time)" },
+    "vennAria": "Only MODIS {m}, both {b}, only VIIRS {v}",
+    "venn": {
+      "onlyModis": "only MODIS · {n}",
+      "both": "both · {n}",
+      "onlyViirs": "only VIIRS · {n}"
+    },
+    "ref": {
+      "title": "Position against the available history",
+      "tip": "The reference excludes the year being evaluated. MODIS is compared inside its own version block (6.03 or 61.03). With few years, the interface says so instead of declaring an anomaly. Weeks are fixed 7-day blocks of the processing, not ISO weeks."
+    }
+  },
+  "charts": {
+    "yearStrip": {
+      "aria": "Monthly mean extent per sensor",
+      "open": "{month}: open in calendar",
+      "modis": "MODIS extent (scaled)",
+      "viirs": "VIIRS extent (scaled)",
+      "note": "Each sensor is scaled to its own maximum: shape, not size, is comparable."
+    },
+    "weekly": {
+      "aria": "{sensor} weekly extent in {year} against the reference band",
+      "noBand": "No reference band: insufficient history",
+      "weekShort": "b{w}",
+      "legendSeries": "{sensor} weekly extent in {year}",
+      "legendBand": "Range of the available reference years"
+    },
+    "cve": {
+      "aria": "Raw count versus extent for the examples",
+      "detections": "{n} detections",
+      "extent": "{v} extent"
+    }
+  },
+  "map": {
+    "failed": {
+      "title": "The map could not start",
+      "body": "WebGL is unavailable in this browser. The cell list and the evidence panel still work. ({n} cells)"
+    },
+    "aria": {
+      "MOCK": "Map of Tocantins with simulated 0.25 degree cells. Use the cell list for a keyboard alternative.",
+      "REAL": "Map of Tocantins with {n} experimental 0.25 degree cells. Use the cell list for a keyboard alternative."
+    },
+    "attribution": {
+      "MOCK": "Boundaries: IBGE · Cells and activity: SIMULATED",
+      "REAL": "Boundaries: IBGE · Activity: NASA FIRMS (experimental)"
+    },
+    "pop": {
+      "counts": {
+        "MOCK": "MODIS {m} · VIIRS {v} (simulated)",
+        "REAL": "MODIS {m} · VIIRS {v} detections"
+      }
+    }
+  },
+  "spatial": {
+    "controls": "Map controls",
+    "date": "Date",
+    "sensor": "Sensor",
+    "sensorBoth": "Both",
+    "layers": "Map layers",
+    "layer": {
+      "cells": "Cells",
+      "points": { "MOCK": "Simulated detections", "REAL": "Individual detections" },
+      "municipalities": "Municipalities"
+    },
+    "resetView": "Reset view",
+    "chip": {
+      "MOCK": "simulated cells · scenario {scenario}",
+      "REAL": "experimental cells · scenario {scenario}"
+    },
+    "excludedA": "Excluded in scenario A",
+    "side": { "aria": "Day summary and cell list" },
+    "summary": "Day summary",
+    "agreement": "Spatial agreement",
+    "count": {
+      "both": "{n} both",
+      "modis": "{n} MODIS only",
+      "viirs": "{n} VIIRS only",
+      "uncertain": "{n} uncertain"
+    },
+    "top": {
+      "title": "Most active cells",
+      "hint": "keyboard-friendly list",
+      "cell": "Cell",
+      "category": "Category",
+      "open": "Open evidence for cell {cell}",
+      "empty": {
+        "title": "No detections recorded",
+        "body": "Nothing was recorded for this filter on this day. That is not evidence of absence."
+      }
+    }
+  },
+  "evidence": {
+    "aria": "Evidence for cell {cell}",
+    "eyebrow": { "MOCK": "Evidence explorer · simulated", "REAL": "Evidence explorer · NASA FIRMS records" },
+    "cell": "Cell {i}, {j}",
+    "cellSize": "0.25° cell",
+    "close": "Close evidence panel",
+    "clear": "Clear selection",
+    "interpretation": "Interpretation",
+    "excludedA": "excluded in scenario A",
+    "excludedA.tip": "Scenario A keeps only cells with corroborated coverage",
+    "boundary": "Border cell: part of this cell lies outside Tocantins. Only detections inside the state outline are counted, and the coverage fraction refers to the whole cell.",
+    "why": {
+      "BOTH": "Both sensors recorded at least one detection inside this cell on this UTC day. This is agreement of cells, not identity of fires: the pixels differ (≈1 km vs 375 m) and the passes are at different times.",
+      "MODIS_ONLY": "Only MODIS recorded activity here while the coverage needed for the comparison is corroborated. It does not prove VIIRS saw nothing burning: cloud, smoke, view angle and pass time are unknown.",
+      "VIIRS_ONLY": "Only VIIRS recorded activity here while the coverage needed for the comparison is corroborated. VIIRS has a smaller pixel and is more sensitive to small or short-lived heat sources.",
+      "UNCERTAIN": "The coverage of at least one sensor cannot be asserted for this cell (partial, indeterminate or conflicting), so the comparison between sensors is not applicable. The interface does not claim exclusivity or absence.",
+      "NONE": "No detection was recorded in this cell. This is not evidence that there was no fire: it only means nothing was recorded (and coverage may be partial)."
+    },
+    "sat": {
+      "title": "Sensors, satellites and coverage (cell, day)",
+      "satellite": "Satellite",
+      "det": "Det.",
+      "pass": "Pass (UTC)",
+      "coverage": "Coverage",
+      "version": "Version",
+      "fraction": "({v} % of the cell)",
+      "note": "MODIS versions 6.03 / 61.03 are observed labels, kept separate and not assumed equivalent; their link to a specific collection is not confirmed. The VIIRS version field does not prove scientific homogeneity."
+    },
+    "cmp": {
+      "title": "Comparability on this day",
+      "cells": "{n} cells",
+      "kNa": "not applicable"
+    },
+    "det": {
+      "title": "Individual detections",
+      "count": { "MOCK": "{n} simulated", "REAL": "{n} recorded" },
+      "empty": {
+        "title": "No detection recorded in this cell on this day",
+        "body": "That is different from “no fire”: it only means nothing was recorded."
+      },
+      "dn": { "D": "day", "N": "night" },
+      "lat": "lat",
+      "lon": "lon",
+      "confidence": "confidence",
+      "pixel": "pixel",
+      "source": "source SHA-256",
+      "line": "line {n}",
+      "showAll": "Show all {n}"
+    },
+    "limits": {
+      "title": "Limitations.",
+      "body": {
+        "MOCK": "A detection is a thermal anomaly flag, not a confirmed fire. Geometric coverage does not guarantee a clear view (cloud and smoke are unknown). FRP and confidence are descriptive and not equivalent between MODIS (0–100) and VIIRS (l/n/h). All values on this panel are simulated.",
+        "REAL": "A detection is a thermal anomaly flag, not a confirmed fire, and two records in the same cell and day are not necessarily the same event. Geometric coverage does not guarantee a clear view (cloud and smoke are unknown). FRP and confidence are descriptive and not equivalent between MODIS (0–100) and VIIRS (l/n/h). Experimental and not validated."
+      }
+    }
+  },
+  "overview": {
+    "hero": {
+      "eyebrow": "NASA Space Apps Challenge 2026 · MODIS and VIIRS hot spots",
+      "title": "Understand thermal activity beyond hotspot counts.",
+      "body": "MODIS and VIIRS see the same land differently: pixel size, overpass time and coverage change what a “thermal detection” means. This calendar keeps each sensor’s extent, intensity, coverage and agreement apart, so you can see what a count hides.",
+      "explore": "Explore the calendar",
+      "map": "Open the map",
+      "method": "How to read it"
+    },
+    "chip": {
+      "region": "Tocantins, Brazil",
+      "cells": "0.25° cells (experimental)",
+      "products": { "MOCK": "Standard products (simulated)", "REAL": "Standard products" }
+    },
+    "card": {
+      "aria": "Period and region selection",
+      "region": "Region",
+      "regionSub": "Brazil · IBGE boundaries",
+      "notice": {
+        "MOCK": "Everything on screen is **simulated** (development mode).",
+        "REAL": "**Experimental analysis**, not validated: thermal detections from NASA FIRMS, not confirmed fires. Independent project; not an official NASA product."
+      }
+    },
+    "kpi": {
+      "modisSat": "Terra + Aqua · ~1 km",
+      "viirsSat": "NOAA-20 · 375 m",
+      "extent": "Typical daily extent",
+      "extentTip": "Median, over the days of the year, of the daily share of the observed area with recorded thermal detections (scenario selected above). Not burned area.",
+      "extentSub": "median day · {year}",
+      "intensityTip": "Median, over the days of the year, of the detections per active cell.",
+      "intensitySub": "det. per active cell · median day",
+      "detectionsTip": "This sensor only. MODIS and VIIRS counts are not additive, not equivalent, and not a number of fires.",
+      "detectionsSub": "in {year} · not comparable across sensors",
+      "uncertain": "{a} of {b} days with partial or uncertain coverage",
+      "excluded": "{n} excluded in scenario A"
+    },
+    "cmp": {
+      "title": "Comparability",
+      "tip": "A day is comparable when at least 80 % of the region was covered by both sensors. K is withheld otherwise.",
+      "days": "Comparable days",
+      "daysSub": "{a} of {b} days",
+      "k": "Typical agreement K",
+      "kSub": "{n} days with K",
+      "kTip": "Median Jaccard agreement between sensors over comparable days.",
+      "note": "K measures agreement of cells, not identity of fires or sensor quality. It is never shown for days that are not comparable."
+    },
+    "map": {
+      "aria": "Map preview",
+      "title": "Where activity was recorded",
+      "sub": {
+        "MOCK": "{date} · both sensors · simulated cells",
+        "REAL": "{date} · both sensors · experimental cells"
+      },
+      "open": "Open explorer",
+      "chip": { "MOCK": "SIMULATED cells", "REAL": "EXPERIMENTAL cells" },
+      "note": "Click a cell to open its evidence. K for this day:"
+    },
+    "cal": {
+      "aria": "Calendar preview",
+      "sub": "Extent of recorded activity per sensor (compare mode)",
+      "full": "Full calendar"
+    },
+    "dont": {
+      "title": "What the numbers don’t tell",
+      "sub": {
+        "MOCK": "Ways a plain hotspot count can mislead — each one opens a simulated example in the calendar.",
+        "REAL": "Ways a plain hotspot count can mislead — each one opens a documented case of the real processing in the calendar."
+      },
+      "show": "Show in calendar",
+      "never": {
+        "title": "Never a fire count.",
+        "body": "A detection is a thermal anomaly flag. Absence of detections is not absence of fire, and a count of MODIS plus a count of VIIRS is not a number of fires."
+      }
+    },
+    "facts": { "aria": "Weekly facts, {sensor}, block {week} of {year}" }
+  },
+  "examples": {
+    "MOCK": {
+      "count-vs-extent": {
+        "title": "Same hotspot count, different story",
+        "summary": "On {a} and {b} (simulated) MODIS shows almost the same number of detections, but the area with recorded activity differs a lot.",
+        "lesson": "A count cannot tell whether activity is spread over many cells or concentrated in a few."
+      },
+      "agree": {
+        "title": "Two sensors, one busy day",
+        "summary": "A well covered day in which both sensors record activity in the same region — agreement is quantified, never assumed.",
+        "lesson": "Agreement is measured on cells both sensors could actually observe."
+      },
+      "conflict": {
+        "title": "Detections without a matching pass",
+        "summary": "Simulated Terra detections have no matching granule in the coverage catalogue, so coverage cannot be asserted.",
+        "lesson": "The coverage catalogue is not an absolute authority; conflicts are flagged, not hidden."
+      },
+      "incomplete": {
+        "title": "Catalogue incomplete: comparison withheld",
+        "summary": "NOAA-20 coverage cannot be corroborated on this simulated day, so spatial agreement is not applicable.",
+        "lesson": "When coverage is unknown, “no detection” says nothing about the ground."
+      },
+      "aqua-partial": {
+        "title": "A satellite sees only part of the region",
+        "summary": "Aqua covers only the western part of the region on this simulated day; the extent is normalised by what was covered.",
+        "lesson": "Extent is reported with numerator and denominator so partial coverage is visible."
+      },
+      "both-partial": {
+        "title": "Partial coverage in both MODIS satellites",
+        "summary": "Both Terra and Aqua cover only part of the region: the MODIS reading is labelled as uncertain.",
+        "lesson": "Uncertain coverage is shown, never silently averaged away."
+      },
+      "reference": {
+        "title": "Not enough history for a MODIS reference",
+        "summary": "In the first MODIS version block there is only one other year to compare with, so no reference position is shown.",
+        "lesson": "With few years the interface says “insufficient reference” instead of inventing an anomaly."
+      }
+    },
+    "REAL": {
+      "count-vs-extent": {
+        "title": "Fewer detections, wider extent",
+        "summary": "MODIS, block {week} of {year} (a fixed 7-day block, not an ISO week): the raw count is below the available reference years, but the normalised extent is above them.",
+        "lesson": "Activity spread over more cells with fewer detections each reads differently from a plain count."
+      },
+      "extent-vs-count": {
+        "title": "More detections, extent within the range",
+        "summary": "VIIRS NOAA-20, block {week} of {year} (a fixed 7-day block, not an ISO week): the raw count is above the available reference years, but the extent stays inside their range.",
+        "lesson": "More detections here come with higher intensity in the same cells, not with a larger area."
+      },
+      "agree": {
+        "title": "September 2024: both sensors very active",
+        "summary": "The first half of September 2024 is the peak of recorded activity of the series, with both sensors above the available reference. Agreement K is computed only where both could be observed.",
+        "lesson": "Agreement of cells is not identity of fires, and a busy day says nothing about causes."
+      },
+      "conflict": {
+        "title": "May 2025: FIRMS records without a matching granule",
+        "summary": "On 13–16 May 2025 Terra detections in the FIRMS records have no matching granule in the CMR catalogue. Coverage is indeterminate and K is not applicable.",
+        "lesson": "The coverage catalogue is not an absolute authority; conflicts are flagged, not hidden."
+      },
+      "aqua-partial": {
+        "title": "A satellite sees only part of the region",
+        "summary": "Aqua covers only part of the region on this day; the extent is normalised by the area actually covered, with numerator and denominator visible.",
+        "lesson": "Partial coverage is shown, never silently averaged away."
+      },
+      "incomplete": {
+        "title": "Catalogue incomplete: comparison withheld",
+        "summary": "The CMR catalogue gives no evidence of completeness for NOAA-20 on this day, so coverage cannot be asserted and K is not applicable.",
+        "lesson": "When coverage is unknown, “no detection” says nothing about the ground."
+      },
+      "reference": {
+        "title": "Not enough history for a MODIS reference",
+        "summary": "MODIS 2021–2022 (version 6.03) has only one other year inside its block, so no reference position is shown.",
+        "lesson": "With few years the interface says “insufficient reference” instead of inventing an anomaly."
+      }
+    }
+  },
+  "method": {
+    "navAria": "Methodology sections",
+    "nav": {
+      "sensors": "MODIS × VIIRS",
+      "detection": "Detection ≠ fire",
+      "extent": "Extent vs intensity",
+      "coverage": "Coverage",
+      "agreement": "Agreement (K)",
+      "history": "History & reference",
+      "limits": "Uncertainty"
+    },
+    "navNote": {
+      "MOCK": "All figures and numbers in this mode are **simulated**.",
+      "REAL": "Experimental analysis. **Not validated.** Drawings are illustrations, not data."
+    },
+    "sensors": {
+      "title": "MODIS × VIIRS: two different instruments",
+      "p1": "MODIS (on Terra and Aqua) and VIIRS (here on NOAA-20) both flag thermal anomalies, but they are not interchangeable. MODIS pixels are about 1 km; VIIRS pixels are 375 m. The satellites cross the same place at different times, and over the years the Aqua overpass drifts later in the day.",
+      "b1": "VIIRS usually flags more cells because its pixel is smaller.",
+      "b2": "MODIS and VIIRS counts must not be added or treated as equal.",
+      "b3": "The MODIS product version label differs between years (6.03 in 2021–2022, 61.03 from 2023). These are observed labels; their equivalence with a specific collection is not confirmed, so the blocks are analysed separately.",
+      "example": "See a day where one satellite covers only part of the region"
+    },
+    "detection": {
+      "title": "A thermal detection is not a confirmed fire",
+      "p1": "A thermal detection is a flag at one pixel and one moment. It may be vegetation burning, but it can also be an industrial source or a false alarm, and many real fires are missed because of cloud, smoke, view angle or timing.",
+      "p2": "That is why this calendar speaks of **“recorded thermal activity”**, never of fires, and never infers that a day without detections had no fire. A count of detections is not a number of fires."
+    },
+    "extent": {
+      "title": "Spatial extent versus intensity",
+      "p1": "**Extent** is the share of observed cells with at least one detection (it is not burned area). **Intensity** is the number of detections per active cell. Two periods can have the same count but very different extent and intensity — and lead to different readings against the history.",
+      "p2": "The calendar keeps both visible, together with the numerator and denominator of the extent.",
+      "example": {
+        "MOCK": "See two days with the same count",
+        "REAL": "See a block where count and extent disagree"
+      }
+    },
+    "coverage": {
+      "title": "Satellite coverage",
+      "p1": "A cell without detections only means something if the satellite really observed it. We use the footprint of each satellite pass (granules from the CMR catalogue) to separate: **detection recorded**, **coverage corroborated**, **partial coverage**, **coverage indeterminate** and conflicts between the FIRMS records and the catalogue.",
+      "p2": "Coverage is geometric: it never guarantees a clear sky. The catalogue itself can be incomplete, so absence of a granule is not taken as proof of no observation.",
+      "exampleIncomplete": "Catalogue incomplete",
+      "exampleConflict": "Detections without a matching pass"
+    },
+    "agreement": {
+      "title": "Spatial agreement between sensors",
+      "p1": "K (Jaccard) compares _where_ each sensor recorded activity, only on cells both could observe. We also show a chance level obtained by shifting the cells. When coverage is not comparable, K is shown as **N/A** and a diagnostic value is never displayed.",
+      "p2": "Agreement of cells is not identity of fires, and K is not the reliability or accuracy of a sensor: the sensors have different pixels and pass at different times.",
+      "example": "See a day with both sensors"
+    },
+    "history": {
+      "title": "History and reference",
+      "p1": "Each fixed 7-day block of the year is compared with the same block in the other years, never including the year being evaluated. The result is a position — above, within or below the range of the available years — not a statistically validated anomaly: with five years the reference is coarse.",
+      "p2": "These blocks are the 7-day groups used by the processing (week 53 has 1–2 days); they are not ISO weeks.",
+      "p3": "MODIS is compared only inside its own version block, so in 2021–2022 there is not enough reference and the interface says so.",
+      "example": "See the insufficient-reference case",
+      "chartNote": {
+        "MOCK": "Demonstration series for VIIRS, {year} (simulated).",
+        "REAL": "VIIRS NOAA-20, {year}: weekly extent against the range of the other years (scenario selected above)."
+      }
+    },
+    "limits": {
+      "title": "Uncertainties and limitations",
+      "i1": "**Thermal detection ≠ confirmed fire.**",
+      "i2": "**Detection count ≠ number of fires.**",
+      "i3": "**Spatial extent ≠ burned area.**",
+      "i4": "**Granule coverage ≠ cloud-free observation.**",
+      "i5": "**Spatial agreement ≠ confirmed identical event.**",
+      "i6": "**Historical comparison ≠ statistically validated anomaly.**",
+      "i7": "Cell size (0.25°) is an experimental choice; coarser cells agree more by chance.",
+      "i8": "Conservative (A) and exploratory (B) coverage scenarios are both available so the effect of coverage rules can be seen.",
+      "i9": "Terra and Aqua are expected to be retired soon: the MODIS history is a closed series."
+    },
+    "about": {
+      "MOCK": {
+        "title": "About this mode.",
+        "body": "Every number, cell, detection, pass time, coverage state and reference position is simulated. Only the region geometry (IBGE municipal boundaries) is real."
+      },
+      "REAL": {
+        "title": "About this analysis.",
+        "body": "Firewatch is an independent project (originally the NASA Fire Calendar, built for the NASA Space Apps Challenge 2026) and is not an official NASA product. It is an experimental analysis of NASA FIRMS thermal detections (MODIS Terra/Aqua and VIIRS NOAA-20) for Tocantins, 2021–2025, processed with coverage from the CMR catalogue. It is not validated, has not been reviewed against independent data, and must not be used for decisions about fire."
+      }
+    }
+  },
+  "diagrams": {
+    "tag": "ILLUSTRATION",
+    "pixel": {
+      "aria": "A 1 km MODIS pixel over a grid of 375 m VIIRS pixels",
+      "caption": "One MODIS pixel (~1 km) covers several VIIRS pixels (375 m). A single heat source can light up one MODIS pixel and several VIIRS pixels — or only the VIIRS ones.",
+      "modis": { "t": "MODIS pixel", "l1": "≈ 1 km, larger toward", "l2": "the swath edge" },
+      "viirs": { "t": "VIIRS pixel", "l1": "375 m, finer detail,", "l2": "different pass time" },
+      "foot": { "l1": "Counts are therefore", "l2": "not equivalent." }
+    },
+    "flow": {
+      "aria": "From a satellite pixel to a detection record, which is not a confirmed fire",
+      "caption": "A detection is the output of an algorithm applied to one pixel at one moment. Confirming a fire needs independent evidence that this product does not provide.",
+      "pixel": "Pixel",
+      "anomaly": "Thermal anomaly",
+      "detection": "Detection",
+      "fire": "Fire?",
+      "need": { "l1": "needs other", "l2": "evidence" },
+      "unknown": { "t": "Unknown from the data alone:", "l1": "· cloud and smoke   · view angle", "l2": "· pass time vs. fire diurnal cycle" }
+    },
+    "extent": {
+      "aria": "Same detection count, different spatial extent",
+      "caption": "Both examples have 12 detections. On the left they are spread over 12 cells (large extent, intensity 1). On the right they are packed into 3 cells (small extent, intensity 4).",
+      "spread": "Extent 33% · intensity 1",
+      "packed": "Extent 8% · intensity 4",
+      "dets": "12 detections"
+    },
+    "swath": {
+      "aria": "Region with a covered part, a partially covered part and an uncovered part",
+      "caption": "Each satellite observes a band (swath) on each pass. Cells outside the band — or on a day with a missing granule — have unknown coverage, and an empty cell there means nothing.",
+      "covered": "covered",
+      "partial": "partial",
+      "unknown": "unknown",
+      "rules": {
+        "t": "Reading rules",
+        "l1": "covered: “no detection”",
+        "l2": "is only “nothing",
+        "l3": "recorded”",
+        "l4": "partial / unknown:",
+        "l5": "no statement at all",
+        "l6": "Clouds: never known",
+        "l7": "from this data"
+      }
+    },
+    "venn": {
+      "aria": "Venn diagram of MODIS and VIIRS active cells",
+      "caption": "K = cells active in both ÷ cells active in either, computed only where both sensors could observe. High K means the same places were flagged — not that the same fires were seen.",
+      "onlyModis": "MODIS only",
+      "both": "both",
+      "onlyViirs": "VIIRS only",
+      "formula": "K = both ÷ (all three)",
+      "chance": { "l1": "compared with a chance", "l2": "level from shifted cells" }
+    }
+  }
+}
