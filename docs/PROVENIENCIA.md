@@ -1,11 +1,11 @@
 # Proveniência
 
 ## Início do projeto
-- Hackathon NASA Space Apps Challenge 2026: **14–15/11/2026** (FAQ oficial dos participantes, localizada por busca em
+- [Anotação 09.2: a organização local de Ceres abriu o evento em 2026-11-13, segundo o proprietário; o período oficial de submissão da NASA vai de 2026-11-14 09:00 a 2026-11-15 23:59.] Hackathon NASA Space Apps Challenge 2026: **14–15/11/2026** (FAQ oficial dos participantes, localizada por busca em
   2026-11-14; a página do desafio não pôde ser aberta pela ferramenta: erro de certificado TLS. Confirmar na fonte).
 - Este repositório foi criado em **2026-11-14**, dentro do período. Nenhum código, interface, biblioteca ou histórico
   Git do projeto anterior foi copiado.
-- **Material anterior ao hackathon (declarar na submissão):** em 2026-11-13 (véspera), o projeto legado adquiriu os
+- **[Anotação 09.2: incompleto; o projeto anterior começou em 2026-11-09, ver "Cronologia comprovada" abaixo.]** **Material anterior ao hackathon (declarar na submissão):** em 2026-11-13 (véspera), o projeto legado adquiriu os
   dados NASA FIRMS e produziu relatórios de viabilidade. Esses dados e relatórios são usados como *insumo e referência*;
   o código, os resultados e a análise desta missão foram feitos no período oficial.
 
@@ -54,8 +54,20 @@ hipóteses e reverificadas nos CSVs brutos NASA (ver `VALIDACAO_DADOS.md`).
 - **Repositório público:** este repositório é um *snapshot* auditado do repositório privado de desenvolvimento (sem o histórico Git privado). Foram omitidos relatórios operacionais internos (publicação/infraestrutura) e dados brutos.
 - Caminhos locais foram removidos dos documentos publicados.
 
-## Atualização (Missão 09.1, 2026-11-15): IA, cronologia e originalidade
-- **Cronologia declarada:** (1) **2026-11-13 (véspera):** aquisição dos dados NASA FIRMS e estudo exploratório de viabilidade MODIS x VIIRS, no projeto privado anterior do mesmo proprietário; (2) **2026-11-14 a 2026-11-15:** desenvolvimento deste projeto (motor, ferramentas, testes, resultados 2021-2025, aplicação web, documentação); (3) componentes **Aurora próprios pré-existentes** reutilizados: tokens genéricos (MIT, confirmado) e uma marca da asa (direitos reservados). Nada disso é ocultado.
-- **Ponto aberto:** a FAQ oficial dos participantes diz que "teams are not allowed to begin working on the challenges prior to the hackathon". O trabalho de 2026-11-13 pode estar nessa regra; **a equipe esclarecerá com o Local Lead**. Os Termos e Condições (https://www.spaceappschallenge.org/legal/) não definem "work is original" além de conteúdo "created for the NASA Space Apps Challenge" ser livre ou open source (OSI). Não se afirma conformidade.
+## Atualização (Missão 09.1, 2026-11-15): IA e originalidade
 - **IA:** Claude Code (Claude Sonnet 5.5) para implementação e testes assistidos por IA; ChatGPT (OpenAI) para estruturar instruções ao Claude Code, apoiar pesquisa e planejamento, revisar interpretações científicas e resultados analíticos e redigir/revisar documentação e materiais de apresentação. Não se afirma que o ChatGPT tenha escrito código-fonte diretamente. Ver `AI_DISCLOSURE.md`.
 - **Validação:** nenhuma validação científica humana independente ocorreu.
+- **Cronologia:** ver a seção seguinte (Missão 09.2), que **substitui** as afirmações anteriores sobre datas (inclusive "Este repositório foi criado em 2026-11-14", que continua correta, e "véspera", que era incompleta).
+
+## Cronologia comprovada (Missão 09.2, 2026-11-15)
+Fonte: histórico Git dos dois projetos (horários de commit, UTC-3) e documentos. Os commits mostram **quando o trabalho foi registrado**, não todas as horas trabalhadas. Nenhuma data foi ajustada.
+
+| Quando | O que | Evidência | Categoria |
+|---|---|---|---|
+| 2026-11-09 a 2026-11-12 | Projeto privado anterior do mesmo proprietário (também chamado Firewatch; seu `AGENTS.md` o descreve como "Firewatch MVP for NASA Space Apps Challenge 2026, challenge 9"): fundação de dados, importadores, calendário de atividade de queima de **um sensor por vez**, MVP web geográfico (mapa, ranking, i18n) publicado em 2026-11-12, primeiras amostras reais da NASA FIRMS, especificação de pesquisa sobre harmonização MODIS x VIIRS (consulta ao texto oficial do desafio em 2026-11-12). Sem tela de comparação MODIS x VIIRS. | commits `4fa9be4` (11-09 10:19) a `69c454a` (11-12 16:41) do projeto anterior | pesquisa/estudo (NASA, sensores); aquisição exploratória; **implementação de uma aplicação anterior de sensor único** |
+| 2026-11-13 | Abertura do evento local em Ceres (informação do proprietário). Aquisição exploratória de dados FIRMS (lotes 1 a 3), estudo de viabilidade e experimentos exploratórios MODIS x VIIRS no projeto anterior; site anterior suspenso. | commits `5cf258f`, `a19b973`, `2b5b084` (11-13 13:45 a 15:17) | pesquisa; aquisição exploratória |
+| 2026-11-14 09:58 em diante | **Este projeto:** estrutura inicial 09:58; motor de harmonização 10:56; novas aquisições e resultados 2021-2025 (documentos de 2026-11-14); mockup 14:41; interface com dados reais 17:31; identidade Firewatch 18:16; publicação. | commits `f179d86` a `b6fe5ed` (11-14) e `5c559cb` (11-15 09:33) | **implementação da solução concorrente** |
+| 2026-11-15 | Identidade Ikarus Aurora no sidebar/navbar; repositório público e documentação. | `5c559cb`; repositório público | acabamento; publicação |
+| reutilização autorizada | tokens genéricos Aurora (MIT) e uma marca da asa (direitos reservados); nome Firewatch e domínio do projeto anterior | `web/src/design/aurora-source.json` | componentes pré-existentes do proprietário |
+
+**Fatos para esclarecimento (não são acusação):** (1) o início oficial do período de submissão é 2026-11-14 09:00 (guia da NASA); o primeiro commit deste projeto é de 09:58 do mesmo dia; (2) a FAQ da NASA diz que as equipes não podem "começar a trabalhar nos desafios antes do hackathon"; o proprietário entende que pesquisa e preparação anteriores ao início oficial são permitidas, e que a organização local abriu o evento em 2026-11-13; (3) o projeto anterior (2026-11-09 a 12) inclui **implementação de um aplicativo de sensor único** com o mesmo nome, e documentos de planejamento da harmonização, antes de 2026-11-13. Isso será apresentado ao Local Lead para confirmar o enquadramento; **não se afirma conformidade nem irregularidade**. Os Termos e Condições (https://www.spaceappschallenge.org/legal/) não definem "trabalho original" além de que o conteúdo criado para o desafio seja livre ou OSI.

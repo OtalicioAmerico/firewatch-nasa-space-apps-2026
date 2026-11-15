@@ -182,14 +182,23 @@ change, and what has never been tested, is listed in
 (Only the roles above are recorded; no other claim is made about individual contributions.)
 
 ## Originality and prior work (full disclosure)
-- **Before the event (2026-11-13):** the NASA FIRMS data acquisition and an exploratory research study comparing MODIS
-  and VIIRS were prepared in an earlier private project of the same owner. They are used as input and reference only; the
-  conclusions were treated as hypotheses and re-verified (see `docs/PROVENIENCIA.md`, `docs/VALIDACAO_DADOS.md`).
-- **During the event (2026-11-14 to 2026-11-15):** this repository's scientific engine, tools, tests, calendar results,
-  web application and documentation were developed.
-- **Pre-existing, reused components of the owner:** the Aurora design tokens and one Ikarus Aurora logo mark.
-- Whether work prepared on 2026-11-13 is compatible with the event rule that teams may not start working on the challenge
-  before the hackathon is an open question that the team will clarify with its Local Lead.
+Chronology taken from the Git history and documents of both projects (commit times, UTC-3; they show when work was
+committed, not every hour worked):
+- **2026-11-09 to 2026-11-12 - earlier private project of the same owner** (also called Firewatch): a data foundation and a
+  single-sensor "burning activity calendar" with a geographic web MVP (published on 2026-11-12), first FIRMS samples, and
+  a written research specification on harmonizing MODIS and VIIRS. It had no MODIS x VIIRS comparison view.
+- **2026-11-13 - local event opening in Ceres, per the owner:** exploratory FIRMS data acquisition and an exploratory
+  MODIS x VIIRS study in that earlier project. Used here as input and reference only.
+- **2026-11-14 09:58 onward - this repository** (first commit 09:58, after the official 09:00 start of the submission
+  period): the scientific engine, tools, tests, the 2021-2025 Tocantins acquisition and results, the web application and
+  the documentation.
+- **Pre-existing, reused components of the owner:** generic Aurora design tokens (MIT) and one logo mark (rights reserved).
+  The name Firewatch and its domain were also used by the earlier project.
+
+NASA's guide opens project submission on 2026-11-14 at 09:00 local time; the participant FAQ asks teams not to begin
+working on the challenges before the hackathon. The owner's reading is that research and preparation before the
+official start are allowed and that the competing solution was built after it; the team keeps all of this documented and
+will confirm that reading with its Local Lead. No date in this repository was adjusted. Details: `docs/PROVENIENCIA.md`.
 
 ## Use of AI (Super Intelligence)
 Two AI tools were used, under human direction. Full details: [`AI_DISCLOSURE.md`](AI_DISCLOSURE.md).

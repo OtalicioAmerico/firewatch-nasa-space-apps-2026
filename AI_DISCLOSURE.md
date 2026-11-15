@@ -33,12 +33,16 @@ hand-programmed when it was generated with Claude Code; or that any result was v
 | Presentation / demo material | Not part of this repository |
 
 ## Timeline and prior work (not hidden)
-- **2026-11-13 (before the event):** NASA FIRMS data were acquired and an exploratory MODIS x VIIRS study was written in an
-  earlier private project of the same owner, with AI-assisted reports. Used here as input and reference only.
-- **2026-11-14 to 2026-11-15 (event):** development of this repository.
+Based on commit times (UTC-3) and documents; see `docs/PROVENIENCIA.md` for the table.
+- **2026-11-09 to 2026-11-12:** earlier private project of the same owner (also named Firewatch): data foundation,
+  single-sensor calendar and geographic web MVP (published 2026-11-12), first FIRMS samples and a written MODIS-VIIRS
+  harmonization research specification. AI-assisted (Claude Code).
+- **2026-11-13 (local event opening, per the owner):** exploratory FIRMS acquisition and an exploratory MODIS x VIIRS study
+  in that project, with AI-assisted reports. Used here as input and reference only.
+- **2026-11-14 09:58 onward:** development of this repository (first commit 09:58).
 - **Pre-existing owner components reused:** generic Aurora design tokens (MIT) and one logo mark (rights reserved).
-- Whether the 2026-11-13 preparation is compatible with the event rule that teams may not start working on the challenge
-  before the hackathon is **unresolved** and will be clarified with the Local Lead. See `docs/PROVENIENCIA.md`.
+- The owner understands research and preparation before the official start as permitted and the competing solution as
+  built after it; this will be confirmed with the Local Lead. No dates were adjusted.
 
 ## Limits
 No scientific validation by humans or AI exists beyond what the README and `docs/` state. No external expert review has
