@@ -7,6 +7,7 @@ import { OverviewPage } from './pages/OverviewPage'
 import { CalendarPage } from './pages/CalendarPage'
 import { SpatialPage } from './pages/SpatialPage'
 import { MethodologyPage } from './pages/MethodologyPage'
+import { AboutPage } from './pages/AboutPage'
 
 export default function App() {
   const { state } = useApp()
@@ -29,6 +30,7 @@ export default function App() {
             {state.page === 'calendar' && <CalendarPage />}
             {state.page === 'spatial' && <SpatialPage />}
             {state.page === 'methodology' && <MethodologyPage />}
+            {state.page === 'about' && <AboutPage />}
           </DataBoundary>
         </main>
       </div>

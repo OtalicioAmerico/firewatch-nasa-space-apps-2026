@@ -4,7 +4,7 @@ import { DEFAULT_LANG, parseLang, type Lang } from '../i18n'
 /** Both data sources cover exactly this range of scientific UTC days (checked by the tests). */
 export const DATA_RANGE = { first: '2021-01-01', last: '2025-12-31' }
 
-export type PageId = 'overview' | 'calendar' | 'spatial' | 'methodology'
+export type PageId = 'overview' | 'calendar' | 'spatial' | 'methodology' | 'about'
 export type Theme = 'ikarus-light' | 'ikarus-dark' // attribute values of the vendored design tokens (internal names)
 
 export interface AppState {
@@ -25,7 +25,7 @@ export interface AppState {
 export const DEFAULT_DATE = '2024-07-19'
 
 
-const PAGES: PageId[] = ['overview', 'calendar', 'spatial', 'methodology']
+const PAGES: PageId[] = ['overview', 'calendar', 'spatial', 'methodology', 'about']
 const SENSORS: SensorFilter[] = ['ALL', 'MODIS', 'VIIRS']
 const METRICS: MetricId[] = ['extent', 'intensity', 'detections', 'concordance']
 

@@ -54,6 +54,7 @@
     "calendar": "Historical calendar",
     "spatial": "Spatial explorer",
     "methodology": "Methodology",
+    "about": "About",
     "shortcuts": "Shortcuts",
     "compareOnMap": "Compare sensors on the map"
   },
@@ -338,6 +339,58 @@
         "title": "No detections recorded",
         "body": "Nothing was recorded for this filter on this day. That is not evidence of absence."
       }
+    }
+  },
+  "about": {
+    "hero": {
+      "eyebrow": "NASA Space Apps Challenge 2026",
+      "title": "About Firewatch",
+      "highlight": "A new way to look at Earth.",
+      "p1": "Firewatch was born from the wish to turn complex scientific data into information that more people can explore and understand.",
+      "p2": "It grew out of the Ikarus Aurora team's participation in the NASA Space Apps Challenge 2026, in the challenge “Harmonization of MODIS and VIIRS Hot Spots”.",
+      "p3": "The first territory of the experiment is the state of Tocantins, in Brazil. The application uses real NASA FIRMS data (2021–2025) and a documented methodology that compares MODIS and VIIRS without merging the two sensors.",
+      "chipRegion": "Tocantins, Brazil",
+      "chipData": "NASA FIRMS · 2021–2025",
+      "chipMethod": "MODIS × VIIRS",
+      "notice": "Firewatch is **not** a detector of confirmed fires, a forecasting tool or an official alert system. A thermal detection is a signal to be interpreted, not a confirmed fire."
+    },
+    "story": {
+      "title": "Our story",
+      "p1": "For us, the hackathon was a chance to learn, to investigate a complex problem, to build an application that works, and to share what we found along the way.",
+      "p2": "Doing science also means recognising limits and uncertainty. That is why Firewatch tries to keep visible the observation coverage, the differences between the sensors, and the fact that its analyses are experimental and have not yet been independently validated.",
+      "p3": "We thank the NASA Space Apps Challenge, the organisers, the mentors and the community of the event for the environment of learning and exchange that made this project possible.",
+      "note": "Taking part in the event does not mean endorsement, certification, an award or official scientific validation by NASA. The ideas, the results and any mistakes in this project belong to the team."
+    },
+    "team": {
+      "title": "Our team and experiences",
+      "intro": "Three people, three experiences. Each testimonial is the personal text of the person who signs it; the English versions are faithful translations of the Portuguese originals.",
+      "instagram": "Instagram of {name}",
+      "newTab": "(opens in a new tab)",
+      "original": "Original in Portuguese"
+    },
+    "join": {
+      "title": "This project does not have to end here.",
+      "lead": "If you are a student, a researcher, a teacher, a developer, or simply curious about Earth observation, this project is an invitation. You can:",
+      "i1": "**Get to know the methodology** and understand what comparing MODIS and VIIRS shows, and what it does not;",
+      "i2": "**Study the code**, open under the MIT licence;",
+      "i3": "**Reproduce the experiments**, following the step-by-step guide in the repository;",
+      "i4": "**Question hypotheses and results**, pointing out what may be wrong;",
+      "i5": "**Propose improvements** to the analysis, the interface and the documentation;",
+      "i6": "**Adapt the methodology** to other regions of Brazil and of the world;",
+      "i7": "**Collaborate on the project on GitHub.**",
+      "pilot": "The current application uses **Tocantins as a pilot**. Taking the method to other regions needs adaptation and scientific validation, and this has not been tested yet: the expansion guide in the repository lists what would have to change.",
+      "quote": "Knowledge grows when it is shared.",
+      "github": "Explore on GitHub",
+      "contributing": "Contributing guide",
+      "regions": "Guide to other regions",
+      "methodology": "Read the methodology",
+      "note": "These are the collaboration materials that exist today in the public repository: the README, the contributing guide and the guide to other regions."
+    },
+    "close": {
+      "quote": "Firewatch began with three people and a challenge. Its next chapter can be written by you.",
+      "brand": "Firewatch — A new way to look at Earth.",
+      "last": "The hackathon was the beginning, not the limit of Firewatch.",
+      "note": "An independent project developed for the NASA Space Apps Challenge 2026. It is not an official NASA product. Its analyses are experimental and do not, by themselves, identify confirmed fires."
     }
   },
   "evidence": {

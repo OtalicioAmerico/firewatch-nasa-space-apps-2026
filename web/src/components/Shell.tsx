@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { BookOpen, CalendarDays, FlaskConical, LayoutDashboard, Map as MapIcon, Menu, Moon, Sun } from 'lucide-react'
+import { BookOpen, CalendarDays, FlaskConical, LayoutDashboard, Map as MapIcon, Menu, Moon, Sun, Users } from 'lucide-react'
 import { Brand } from './Brand'
 import { Seg, Tip } from './ui'
 import { useApp, type PageId } from '../state/AppState'
@@ -12,6 +12,7 @@ const NAV: { id: PageId; icon: ReactNode }[] = [
   { id: 'calendar', icon: <CalendarDays size={18} /> },
   { id: 'spatial', icon: <MapIcon size={18} /> },
   { id: 'methodology', icon: <BookOpen size={18} /> },
+  { id: 'about', icon: <Users size={18} /> },
 ]
 
 export function DemoPill({ top }: { top?: boolean }) {
